@@ -22,7 +22,7 @@ stanislas@hanyang.ac.kr}
 \IEEEauthorblockA{\textit{Dept. of Industrial Engineering} \\
 \textit{Hanyang University}\\
 Seoul, South Korea\\
-simongaussmann6658@web .de}
+simongaussmann6658@web.de}
 \and
 \IEEEauthorblockN{Stéphane Rabenarisoa}
 \IEEEauthorblockA{\textit{Dept. of Computer Science} \\
@@ -43,15 +43,7 @@ marc-antoine.dariel@cpe.fr}
 meet\&do is a website that aims to put people in touch who have similar interests and hobbies or need help with issues related to their studies. Enthusiasts can find each other through the website and share real-life activities together.
 \end{abstract}
 
-\begin{IEEEkeywords}
-component, formatting, style, styling, insert
-\end{IEEEkeywords}
-
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits.
-
-\subsection{Explanation}
 
 Nowadays, we are more connected than ever through social media and all kinds of internet-based services yet somehow people are still isolated from each other. Forming friendships and relationships has become challenging for some as it is easy and convenient to hide behind a social media profile. Everyone has an online presence. In this environment, many may find themselves looking for real-life interactions.
 
@@ -59,13 +51,17 @@ We want to create a website that aims at putting people in touch who have simila
 
 Where already existing alternatives might take a more generic approach, we want to create a solution that gives users the opportunity to choose what they are looking for from the beginning. Therefore, the website will be divided into four main areas. That makes it less confusing and easy and intuitive to navigate.
 
-\subsection{Alternatives}
+\section{Alternatives}
 
 Popular alternatives include Jodel, a mobile application which is popular in Germany. This application is location based and only allows posting messages on a public feed.
 
 Another one is Meetup.com, which is more generalist and allows to create meetups related to anything. Our website will focus on integration with third-party APIs thus limiting the scope of the possible meetups.
 
 Our project does not aim to compete with some kind of meeting wesbites like dating sites. Services exchange website are not considered either, since money is not a consideration in the user’s meetings. All meetups should be made for free and not in exchange of money.
+
+\section{Technical consideration}
+
+The project will take the form of a full stack website using Ruby-on-Rails. Future improvements could include the elaboration of a mobile application leveraging an API.
 
 \section{Role assignement}
 
@@ -85,13 +81,7 @@ Development manager & Stephane & Work distribution and time, deadline management
 
 \section{Requirements}
 
-\subsection{Technical consideration}
-
-The project will take the form of a full stack website using Ruby-on-Rails. Future improvements could include the elaboration of a mobile application leveraging an API.
-
-\subsection{Requirements}
-
-\subsubsection{Index page}
+\subsection{Index page}
 
 When the user gets to the index page, 2 sections are visible: a login section on the left of the page and a signup section on the right of the page.
 
@@ -114,7 +104,7 @@ The signup section should show these fields:
 When the user presses the sign-up button considering all
 the information given is valid, the user must click the verification link sent by email to create his account and have access to the home page.
 
-\subsubsection{Home page}
+\subsection{Home page}
 
 Once the user created his account or correctly logged in, he should have access to the home page.
 
@@ -161,7 +151,7 @@ location)
 \item Restore removed meetings
 \end{itemize}
 
-\subsubsection{User section}
+\subsection{User section}
 
 The user section should give the possibility to the user to
 access his personal profile page and settings. Each user has a public profile with a limited set of information such as their name, profile picture, location and past meetings they participated in. An edit page is available for them to update these public details.
@@ -180,7 +170,7 @@ The user’s list should display full names and user profile photos. Next to eac
 
 The opened chat should contain all messages sent by people included in the chat. The current user should be able to see his/her messages on the right side. Next to each message, a user should be able to see the time (hour format) of receipt of a message.
 
-\subsubsection{User’s meeting section}
+\subsection{User’s meeting section}
 
 From the user section, which is a menu on the homepage
 the user can select a page with all his personal meetings that he is participating in or has shown interest in participating in. This page is called My Meetings. It can be found under this name in the user section.
@@ -215,7 +205,7 @@ events)
 \item Users have the ability to archive past events without leaving them, archived events don’t show up on the My Meetings timeline
 \end{itemize}
 
-\subsubsection{Page for an individiual meeting}
+\subsection{Page for an individiual meeting}
 
 From the My Meetings page as well as the Home Feed users can access the page of each individual meeting by clicking on its card in the Feed or My Meetings page.
 
@@ -230,7 +220,7 @@ The page for a certain meeting displays all relevant information added by the cr
 \item Users have to ability to hide an event from their home feed if they choose to
 \end{itemize}
 
-\subsubsection{Create new meeting}
+\subsection{Create new meeting}
 
 This page should present a form to create a new meeting
 which the user will be the organizer of. Required information should be the name of the event (text field), the type of meeting (choose one from a list), the date of the meeting (normalized calendar date) and the meeting location (address from google maps, should be the most accurate possible).
@@ -246,7 +236,7 @@ Once the meeting is created, a card will be added to the user’s ‘My meetings
 
 \section{Specification}
 
-\subsubsection{User section}
+\subsection{User section}
 
 The profile page shows the past 3 meeting the user attended. An edit button is available on the top right hand corner of the profile, only of the user is logged in and viewing is own profile.
 
