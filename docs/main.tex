@@ -1,0 +1,269 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{meet\&do: Meeting website for students and enthusiasts\\}
+
+\author{\IEEEauthorblockN{Stanislas Lange}
+\IEEEauthorblockA{\textit{Dept. of Computer Science} \\
+\textit{Hanyang University}\\
+Seoul, South Korea\\
+stanislas@hanyang.ac.kr}
+\and
+\IEEEauthorblockN{Simon Gaussmann}
+\IEEEauthorblockA{\textit{Dept. of Industrial Engineering} \\
+\textit{Hanyang University}\\
+Seoul, South Korea\\
+simongaussmann6658@web .de}
+\and
+\IEEEauthorblockN{Stéphane Rabenarisoa}
+\IEEEauthorblockA{\textit{Dept. of Computer Science} \\
+\textit{Hanyang University}\\
+Seoul, South Korea\\
+rabena.stephane@gmail.com}
+\and
+\IEEEauthorblockN{Marc-Antoine Dariel}
+\IEEEauthorblockA{\textit{Dept. of Information Systems} \\
+\textit{Hanyang University}\\
+Seoul, South Korea\\
+marc-antoine.dariel@cpe.fr}
+}
+
+\maketitle
+
+\begin{abstract}
+meet\&do is a website that aims to put people in touch who have similar interests and hobbies or need help with issues related to their studies. Enthusiasts can find each other through the website and share real-life activities together.
+\end{abstract}
+
+\begin{IEEEkeywords}
+component, formatting, style, styling, insert
+\end{IEEEkeywords}
+
+\section{Introduction}
+This document is a model and instructions for \LaTeX.
+Please observe the conference page limits.
+
+\subsection{Explanation}
+
+Nowadays, we are more connected than ever through social media and all kinds of internet-based services yet somehow people are still isolated from each other. Forming friendships and relationships has become challenging for some as it is easy and convenient to hide behind a social media profile. Everyone has an online presence. In this environment, many may find themselves looking for real-life interactions.
+
+We want to create a website that aims at putting people in touch who have similar interests and hobbies or need help with issues related to their studies. Getting in touch online is easy but that is just the first step. After finding people with the same interests and making appointments, users of our website meet in real life. Meeting new people works best if you are already interested in similar fields and activities and we want to put people together who have those in common. Common interests to bond over and meet up again in the future or form new friendships.
+
+Where already existing alternatives might take a more generic approach, we want to create a solution that gives users the opportunity to choose what they are looking for from the beginning. Therefore, the website will be divided into four main areas. That makes it less confusing and easy and intuitive to navigate.
+
+\subsection{Alternatives}
+
+Popular alternatives include Jodel, a mobile application which is popular in Germany. This application is location based and only allows posting messages on a public feed.
+
+Another one is Meetup.com, which is more generalist and allows to create meetups related to anything. Our website will focus on integration with third-party APIs thus limiting the scope of the possible meetups.
+
+Our project does not aim to compete with some kind of meeting wesbites like dating sites. Services exchange website are not considered either, since money is not a consideration in the user’s meetings. All meetups should be made for free and not in exchange of money.
+
+\section{Role assignement}
+
+\begin{center}
+\begin{tabular}{ |c|c|c| }
+\hline
+Role & Name & Task description and etc. \\
+\hline
+User & Marc-Antoine & Quality assurance, testing of the product as a normal user through multiple device \\
+\hline
+Customer & Simon & Ensuring requirements are the most precise possible, and that they stay up to date during the lifetime of the project \\
+\hline
+Software developer & Stanislas & Implementation of the requirements and technical feedback \\
+\hline
+Development manager & Stephane & Work distribution and time, deadline management. Communication management with the client. \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Requirements}
+
+\subsection{Technical consideration}
+
+The project will take the form of a full stack website using Ruby-on-Rails. Future improvements could include the elaboration of a mobile application leveraging an API.
+
+\subsection{Requirements}
+
+\subsubsection{Index page}
+
+When the user gets to the index page, 2 sections are visible: a login section on the left of the page and a signup section on the right of the page.
+
+The login section should show 2 fields: username and password fields as well as a login button.
+
+The signup section should show these fields:
+
+\begin{itemize}
+    \item First Name
+    \item Name
+    \item Gender
+    \item Date of Birth
+    \item Email
+    \item Password
+    \item Password confirmation
+    \item Anti-robot captcha verification
+    \item Sign up button
+\end{itemize}
+
+When the user presses the sign-up button considering all
+the information given is valid, the user must click the verification link sent by email to create his account and have access to the home page.
+
+\subsubsection{Home page}
+
+Once the user created his account or correctly logged in, he should have access to the home page.
+
+The user should be able to log out from a logout button at the top right of the home page.
+
+A search bar allows the user to search for a particular meeting.
+The home page should show a feed of meetings. The feed should only show non-archived meetings, be sorted from the nearest upcoming date at the top of the page to the latest date at the bottom of the page. The feed should show all types of meetings.
+
+The meeting cards should show:
+
+\begin{itemize}
+\item Name and/or Type: Restaurant
+(Lunch/Dinner/Brunch...), Sport (Tennis/Football/Swimming...), Study Lesson (Chemistry/Mathematics/Economics...), Entertainment (Theater/Outdoor show/ Concert...), Art Practice (Painting/Music...)
+\item Location: Precise location with exact address and redirection to google maps when address is clicked
+\item Time and duration: Meeting time and expected duration
+of the activity
+\item Price: Can be undefined if free activity or if the price is
+not equally shared
+\item Current participant number, expected participant
+number, max participant number: expected and participant numbers are not mandatory information.
+Possibility to click on current participants to display the
+list of current participants and access to their profile
+\item Details: Text field with additional details from the meeting organizer, the details should be
+expandable/collapsible if too long.
+\item Visual: Most precise visual describing the meeting, it can
+be a promotional photo of a restaurant, the poster of a show, an illustration of Mathematics, ... Whatever visual that can describe the meeting type the most precisely possible
+\item Ask to Join Button: This button will open a new window with a message to send to the meeting organizer for joining the meeting. A default message is proposed to the user, but he can make his own. Join and Cancel Buttons available.
+\item Remove from feed button: A little cross at the top right of the card that removes the card from the feed
+\end{itemize}
+
+\subsection{Search Filters}
+
+The filter section should give the user the possibility to filter the feed results considering:
+
+\begin{itemize}
+\item The type of meetings
+\item The Date/Time of meetings
+\item The Duration of meetings
+\item Number of participants
+\item A location filter (km radius from his current
+location)
+\item Reset all filters
+\item Filter button
+\item Restore removed meetings
+\end{itemize}
+
+\subsubsection{User section}
+
+The user section should give the possibility to the user to
+access his personal profile page and settings. Each user has a public profile with a limited set of information such as their name, profile picture, location and past meetings they participated in. An edit page is available for them to update these public details.
+
+Private information such as email, password, account deletion, etc. are available on a different page called account settings.
+
+\subsection{Chat section}
+
+This page should let a user talk to other users via private
+messages.
+
+A left column should contain a list of people that the user
+has already contacted, and a right column should contain an opened chat between the current user and another user.
+
+The user’s list should display full names and user profile photos. Next to each users' names, something should let the current user know that a user has sent a new message that he/she has not seen already.
+
+The opened chat should contain all messages sent by people included in the chat. The current user should be able to see his/her messages on the right side. Next to each message, a user should be able to see the time (hour format) of receipt of a message.
+
+\subsubsection{User’s meeting section}
+
+From the user section, which is a menu on the homepage
+the user can select a page with all his personal meetings that he is participating in or has shown interest in participating in. This page is called My Meetings. It can be found under this name in the user section.
+
+The basic structure of this page is a list of all the user’s events. All events all displayed chronologically in a timeline format. The user is able to scroll through the timeline and search all content by keywords or different filters.
+
+Other requirements for the My Meetings page:
+
+\begin{itemize}
+\item A search bar on top of the site to search through all of the
+user’s meetings (past and upcoming)
+\item Meetings can be searched by keywords, location, type of
+meeting, tags of a meeting
+\item Drop down menu next to the search bar to choose what
+type of content is displayed
+\item Show all meetups
+\item Timeframe (choose between past and future
+events)
+\item Type of meeting (4 main categories)
+\item Only show favorite meetups
+\item Show archived meetups
+\item On the right side of the bar there is a timeline that indicates dates of meetings, user can scroll through the timeline to navigate the page faster
+\item Meetings are listed along the timeline with their individual dates as they occurred
+\item All meetings are displayed in chronological order (the most recent first)
+\item Different colors for different types of meetings, same as on the homepage
+\item The user has the ability to highlight certain meetups which are then given a more prominent location on the page
+\item Highlighted meetups are marked as favorites and pinned on top of the page, regardless of their dates
+\item User’s favorites can be past events as well as upcoming ones
+\item The ‘highlights’ section on top of the page is visibly separated from the rest of the chronologically displayed events
+\item Users have the ability to remove meetups from their personalized My Meetings page by “leaving” a meetup
+\item In the same way meetups are added to the My Meetings page by ‘joining’ a meetup
+\item Users have the ability to archive past events without leaving them, archived events don’t show up on the My Meetings timeline
+\end{itemize}
+
+\subsubsection{Page for an individiual meeting}
+
+From the My Meetings page as well as the Home Feed users can access the page of each individual meeting by clicking on its card in the Feed or My Meetings page.
+
+The page for a certain meeting displays all relevant information added by the creator of the meetings as well as a chatroom and list of people who joined.
+
+\begin{itemize}
+\item All relevant information as well as a title picture are displayed on a blackboard on top of the page (type of meetup, description, location, date, for how many people is planned, etc)
+\item Underneath there is a chatroom to which everyone who joined the event has access to
+\item All users can access the event page and read information but only users who participate are able to join the chat
+\item Users have to ability to ask questions to the creator of a meeting prior to joining
+\item On the page of the meeting users have the ability to join the meeting, mark the meeting as “I am interested”, or share a link to the event via social media
+\item Users have to ability to hide an event from their home feed if they choose to
+\end{itemize}
+
+\subsubsection{Create new meeting}
+
+This page should present a form to create a new meeting
+which the user will be the organizer of. Required information should be the name of the event (text field), the type of meeting (choose one from a list), the date of the meeting (normalized calendar date) and the meeting location (address from google maps, should be the most accurate possible).
+
+Other information such as the duration of the meeting (numerical value in minutes), the price of the meeting (in local asset, undefined if not stated, otherwise numerical value), the expected and maximum number of participants (numerical values) and some additional details on the meeting (text field).
+
+The form should have a create button as well as a cancel Button. The create button will trigger a confirmation window summing up all the given information and asking the organizer to confirm the meeting creation or go back to editing the meeting. If the organizer confirms the meeting creation, it will create the meeting and it will be uploaded to all the other users meeting feed (in the region). The cancel button should reset the form.
+
+A visual for the new meeting card will be automatically uploaded from a bank of images, the chosen image will have to be the most accurate possible regarding the meeting.
+Once the meeting is created, a chat group for this meeting will be created in the chat section. The organizer is basically the administrator of this chat group and each time a new participant will ask to join the meeting, the organizer will
+have to either accept/deny his participation from this group chat.
+Once the meeting is created, a card will be added to the user’s ‘My meetings’ page and only the organizer will be able to edit or delete the meeting.
+
+\section{Specification}
+
+\subsubsection{User section}
+
+The profile page shows the past 3 meeting the user attended. An edit button is available on the top right hand corner of the profile, only of the user is logged in and viewing is own profile.
+
+When editing their profile, the user has some constraints:
+
+\begin{itemize}
+    \item Name lenght
+\end{itemize}
+
+Accounts settings are accessed via a dropdown menu at the top of the page.
+
+\begin{itemize}
+    \item Password complexity: min 8 chars
+\end{itemize}
+
+\end{document}
+
+
