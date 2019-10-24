@@ -81,11 +81,7 @@ Development manager & Stephane & Work distribution and time, deadline management
 
 \section{Requirements}
 
-\subsection{Index page}
-
-When the user gets to the index page, 2 sections are visible: a login section on the left of the page and a signup section on the right of the page.
-
-The login section should show 2 fields: username and password fields as well as a login button.
+\subsection{Signup page}
 
 The signup section should show these fields:
 
@@ -104,11 +100,24 @@ The signup section should show these fields:
 When the user presses the sign-up button considering all
 the information given is valid, the user must click the verification link sent by email to create his account and have access to the home page.
 
+\subsection{Login page}
+
+The login section should show 2 fields: username and password fields as well as a login button.
+
 \subsection{Home page}
 
 Once the user created his account or correctly logged in, he should have access to the home page.
 
-The user should be able to log out from a logout button at the top right of the home page.
+The website should be able to localize the user city precisely and state it on the Home page. It also should give the user the possibility to change his location from a list of registered cities in the world.
+
+The user should be able to log in from a Login button at the top right of the home page (if not logged in). The login section should show 2 fields: username and password fields as well as a login button.
+
+The user should be able to log out from a Logout button at the top right of the home page (if logged in).
+
+If the user is not logged in and tries to access to logged in user sections (such as personal information) the access will be denied and Login section will be highlighted to inform the user to sign up or log in in order to access this section.
+
+
+\subsection{Feed section}
 
 A search bar allows the user to search for a particular meeting.
 The home page should show a feed of meetings. The feed should only show non-archived meetings, be sorted from the nearest upcoming date at the top of the page to the latest date at the bottom of the page. The feed should show all types of meetings.
@@ -236,20 +245,190 @@ Once the meeting is created, a card will be added to the user’s ‘My meetings
 
 \section{Specification}
 
-\subsection{User section}
+\subsection{Create new meeting}
 
-The profile page shows the past 3 meeting the user attended. An edit button is available on the top right hand corner of the profile, only of the user is logged in and viewing is own profile.
-
-When editing their profile, the user has some constraints:
+On this page, the user has to fill a form with fields corresponding to the following:
 
 \begin{enumerate}
-    \item Name lenght
+
+\item Name (required): Text field, maximum 50 characters, only alphanumeric
+\item Type (required): 2 Dropdown menus, 1 for the main category, can only select one item between (Sport, Outdoor, Entertainment, Culture, Food, Education), this selection is required
+
+The 2nd dropdown menu will be updated depending on the choice of the 1st dropdown menu, can only select one item, this selection is not required (‘----’ if nothing is chosen)
+
+A ‘Other’ item is present in the 2nd dropdown menu list, if selected a new text field will appear (20 characters, only alphanumeric) with precision of the item written by the user, not required.
+\item Date (required): A text field which is not editable by the user, next to it a button with a calendar icon, when the user clicks on the field or the calendar icon, a new calendar pops out with previous dates in gray (not selectable), user can navigate through the years, months and select the date, when selected, the calendars hides and the text field is filled with the selected date.
+\item Time (required): Drop down menu, items are all daily hours in a 15 minutes separation, user has to select one item.
+\item Location (required): Search bar coming from google locations API, user will type the location name and a list of locations known by google will appear (autocomplete), user has to select one, a button next to the text field with a map icon is also available, when clicked, a map will pop up and the user can drag a pointer to the location, if the given point doesn’t correspond to any of the google API’s location, the location will be updated as cardinal coordinates.
+\item Duration: Text field with only numeric characters accepted, from 0 to 1440 (24 hours), if text field is not filled in, it is considered as ‘undefined’.
+\item Price: Price per participant, text field with only numeric characters accepted, from 0 to 999999999999999, if text field is not filled in, it is considered as ‘undefined’. The asset used is the one from the country of the set location.
+\item Expected participants:Text field with only numeric characters accepted, from 0 to 999999999, if text field is not filled in, it is considered as ‘undefined’.
+\item Maximum participants: Text field with only numeric characters accepted, from 0 to 999999999, if text field is not filled in, it is considered as ‘undefined’.
+\item Details: Text field, details are to be written from the organizer, 5 lines of text max, only alphanumeric characters.
+\item Create Button: Opens a new page with all the form but the information are not editable (grayed areas), the only editable field is the picture of the event (selected in the google bank of images depending on the type and location of the meeting). The user can select the graphic used from this bank of images that will appear in the meeting card. The user can then Confirm? Yes/No, if No, back to the form, the new page pops out, if yes meeting is created and back to home page.
+\item Cancel Button: Resets the form after alerting the user with an alert box (Confirm? Yes/No) if confirmed
 \end{enumerate}
 
-Accounts settings are accessed via a dropdown menu at the top of the page.
+\subsection{User’s meetings section}
 
 \begin{enumerate}
-    \item Password complexity: min 8 chars
+    \item Header with MeetnDo logo and MyMeetings title
+    \item White page background
+    \item Search bar
+    \begin{enumerate}
+        \item Search bar on top of the page to search meetings by keywords
+        \item Results are drawn from a database of all of the user’s past and present meetings
+        \item When executing a search results are displayed as a list on the MyMeetings page
+        \item Users can click on the result to reach the page of the individual meeting
+        \item Feature to to guess the user’s search request by keywords, associated meetings are recommended (auto-complete for search requests)
+    \end{enumerate}
+    \item Meetings can be searched by keywords, location, type of meeting, tags of a meeting
+    \item Ability to filter search result
+    \begin{enumerate}
+        \item Drop down arrow next to the search bar to filter what results are displayed
+        \item Implementation of checkbox selection filter (by clicking downward arrow user is taken to the checkbox selection)
+        \begin{enumerate}
+            \item Show all meetings checkbox selected by default
+            \item Checkbox to select type of meeting (Food, Study, Sports, Activities)
+            \item Checkbox to filter by location (select nearby, my area, all)
+            \item Checkbox to select the timeframe (only show past meetings, only show future meetings)
+            \item Checkbox to only show meetings marked as favorites
+            \item Checkbox to only show archived meetings
+        \end{enumerate}
+    \end{enumerate}
+    \item Timeline on the right side of the MyMeetings page
+    \begin{enumerate}
+        \item User can move through the timeline by scrolling on the page
+        \begin{enumerate}
+            \item Marker on the timeline indicates the current position/date
+            \item User’s have the ability to navigate the page faster by clicking and dragging the marker across the timeline or scrolling directly on the timeline
+        \end{enumerate}
+        \item Buttons to show more/ show less (+ or -) on top of the timeline to select the scope of the timeline
+        \begin{enumerate}
+            \item Enables the user to switch between Years/Months/Days to control the level of detail on the timeline
+            \item Purpose: more organized MyMeetings page in case multiple meezings for a specific date, more organized overall display for many meetings
+        \end{enumerate}
+        \item Meetings are listed along the timeline as they occurred
+        \begin{enumerate}
+            \item Listed chronologically by default
+        \end{enumerate}
+    \end{enumerate}
+    \item  Meetings on the MyMeetings page are displayed in boxes
+    \begin{enumerate}
+        \item Box includes title of specific meeting in bold letters
+        \item Short, general descriptions as preview that users choose when creating a meeting
+        \item Location of meeting
+        \item Indicator for rough amount of people attending/ interested in specific meeting e.g. <10, 10+
+        \item Boxes feature slightly rounded corners
+    \end{enumerate}
+    \item Different colored boxes for a well arranged layout and usability
+    \begin{enumerate}
+        \item Distinguished by the 4 general types of meetings
+        \begin{enumerate}
+            \item Red for Food
+            \item Yellow for Education
+            \item Light Green for Sports
+            \item Dark Green for Outdoor
+            \item Orange for Culture
+            \item Blue for Entertainment
+        \end{enumerate}
+        \item Hex transparency 50\%
+    \end{enumerate}
+    \item ‘Highlights’ section pinned above the regular timeline view
+    \begin{enumerate}
+        \item User has the ability to mark meetings as favorites
+        \begin{enumerate}
+            \item Star symbol in the right corner of every meeting box
+            \item By default only outlines, by clicking the star is displayed yellow thus marked as favorite
+        \end{enumerate}
+        \item ‘Highlights’ section visibly divided from the rest of the timeline by light yellow background
+    \end{enumerate}
+    \item Controls over content shown on MyMeetings page
+    \begin{enumerate}
+        \item Ability to remove meetings from MyMeetings
+        \begin{enumerate}
+            \item Leave specific meeting via right click or designated button on the page of the individual meeting
+        \end{enumerate}
+            \item Ability to add meeting to MyMeetings
+        \begin{enumerate}
+            \item Via right click on homepage or designated button ‘Join Meeting’ on the page of the individual meeting
+            \item Mark meeting as ‘I’m interested’ on the individual page of the meeting
+        \end{enumerate}
+        \item Ability to archive past meetings without leaving
+        \begin{enumerate}
+        \item By right click or designated button ‘Archive’ on the page of the individual meeting
+        \item Archived meetings are not shown on the timeline of MyMeetings but can still be searched for
+        \item Archived meetings are displayed with grey background
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Page of an individual meeting}
+
+The page of each individual meeting contains all relevant information about the event. Users can access the page from anywhere e.g. from the Home Feed, MyMeetings or a user’s profile by simply clicking on the box or the title of a specific meeting. All users are able to access the page of a meeting.
+
+\begin{enumerate}
+    \item Background of the page is shown in the same color as the meeting box but at 10\% opacity
+    \item Title of the meeting on top of the page in bold letters
+    \item Contains all information about the meeting
+    \begin{enumerate}
+        \item Type of meeting (as bullet point beneath headline)
+        \item Description of the meeting as put in by the creator of the meeting as ‘Details’
+        \begin{enumerate}
+            \item Text field, Maximum 5 lines of text, alphanumeric characters only
+        \end{enumerate}
+        \item General information displayed as
+        \begin{enumerate}
+            \item ‘ When: "dddd, dd MMMM yyyy HH:mm" ‘ as chosen by the creator
+            \item Approximate duration is stated underneath date and time, if the creator has provided a duration
+            \item Location of the event displayed on the right of time, date and duration
+            \begin{enumerate}
+                \item Section of the map where the meeting will take place is embedded in the page through Google Maps API/HTML (small window)
+                \item Google Maps pin on the map marks the exact location
+                \item Written address/location is displayed beneath the Google Maps window
+                \item By clicking on the map the user is taken to Google Maps with the event location marked
+            \end{enumerate}
+            \item Price per participant is displayed underneath as ‘Price: Value’
+            \begin{enumerate}
+                \item If no price provided, ‘Price’ is not shown
+                \item If price is indicated as 0, it is displayed as ‘Price: Free’
+                \item If no specific price provided, price can also be displayed as an estimate as chosen by the creator (\$/\$\$/\$\$\$)
+            \end{enumerate}
+            \item Expected participants as ‘Expected participants: Value’ if provided by creator
+            \item Maximum participants as ‘Maximum participants: Value’ if provided by creator
+            \item Beneath, the creator/host of the meeting is indicated by displaying a small, circular profile picture as well as the name
+            \begin{enumerate}
+                \item Users can click on the creator to be taken to the person’s profile page
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+    \item Underneath the information about the meetings there are buttons the user can click, those buttons are aligned
+    \begin{enumerate}
+        \item ‘Join’ button to join the meeting
+        \item ‘I’m interested’ button to mark as interested in
+        \item ‘Join Chat room’ button, only becomes visible once the user has joined the meeting
+        \item Links to a chat page of the individual meeting
+        \item ‘Share’ buttons from various social media plugins to share on social media platforms
+        \item ‘Not interested’ button, on the lower right corner and smaller than the other buttons
+        \begin{enumerate}
+            \item Meetings marked as ‘Not interested’ will not be suggested to the user again on the Home Feed
+        \end{enumerate}
+    \end{enumerate}
+    \item To exit the page of an individual meeting, click on the small Exit button in the upper right corner (X)
+\end{enumerate}
+
+\subsection{Signup page}
+
+\begin{enumerate}
+    \item With a Google Account
+    \item With an email
+    \begin{enumerate}
+        \item Name --- Text field, 50 characters max, can’t be empty
+        \item Email address --- Text field, 255 characters max, unique and can’t be empty
+        \item Password --- Text field (password type), 255 characters max, can’t be empty
+        \item Confirmation password --- should match the password
+        \item Location --- Text field which is auto-completed via an API (or a table in database)
+    \end{enumerate}
 \end{enumerate}
 
 \end{document}
