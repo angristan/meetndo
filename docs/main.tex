@@ -59,9 +59,26 @@ Another one is Meetup.com, which is more generalist and allows to create meetups
 
 Our project does not aim to compete with some kind of meeting wesbites like dating sites. Services exchange website are not considered either, since money is not a consideration in the user’s meetings. All meetups should be made for free and not in exchange of money.
 
-\section{Technical consideration}
+\section{Technical specification}
 
-The project will take the form of a full stack website using Ruby-on-Rails. Future improvements could include the elaboration of a mobile application leveraging an API.
+\subsection{Software used}
+
+The website will be built using Ruby 2.6 and the framework Ruby on Rails 6.0. We chose Ruby and Rails because we like the simplicity of the language and we want to expand our knowledge on this framework. Ruby on Rails allows us to save time for CRUD (Create, read, update and delete) operations and allows us to focus on feature that differentiate our wesbite. Moreover, Ruby on Rails follows the MVC architecture (Model, View, Controller) which will help us keep our code clean and organized in a specific folder arborescence and seperate our code depending on its use (models, controllers, routes, helpers, and so on.
+
+Rails also enables us to implement a REST API which can be used if we use a front end Javascript framework like Vue.js or if we end up working on a mobile app. The REST API would use JSON and would be a layer above the CRUD operations.
+
+For the version controlling system, we chose git hosted on the GitHub service. Our repository is public so we don't have any limitation and we are able to be four collaborators on it. We use GitHub's board feature called "Projects" to organize our project with a Kanban-like workflow management method. We have a board for this very paper called "Documentation" and an other one for the actual implementation which will help us keep track of what's been done when coding the wesite.
+
+For the develpment environment half of our team is using macOS and the other half is using Windows 10. Our text editor of choice is VS Code.
+
+\subsection{Hosting}
+
+Our stack only requires Ruby and a DBMS (Database Management System) which is PostgreSQL. For this matter, we chose Heroku which is a hosting provider focusing on easing the deployment process for the developpers. Thus, we will be able to deploy our code to a development environment or production environment via the command line using Heroku as a Git remote or via the Heroku CLI (Command Line Interface) client.
+
+The deployment can also be made from GitHub using their new CI/CD system called GitHub actions, from which we can deploy to Heroku using the Heroku Action which is a wrapper for the CLI. This helps keeping track of the deployments made and ensures the code running is the one in the version control system.
+
+For our initial release we don't expect a very high number of users, hence the choice of the free plan for Heroku as well as Heroku's managed service. The only cost for now would be the domain name which costs about \$10/year.
+
 
 \section{Role assignement}
 
