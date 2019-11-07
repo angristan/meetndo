@@ -57,30 +57,30 @@ Popular alternatives include Jodel, a mobile application which is popular in Ger
 
 Another one is Meetup.com, which is more generalist and allows to create meetups related to anything. Our website will focus on integration with third-party APIs thus limiting the scope of the possible meetups.
 
-Our project does not aim to compete with some kind of meeting wesbites like dating sites. Services exchange website are not considered either, since money is not a consideration in the user’s meetings. All meetups should be made for free and not in exchange of money.
+Our project does not aim to compete with some kind of meeting websites like dating sites. Services exchange website are not considered either, since money is not a consideration in the user’s meetings. All meetups should be made for free and not in exchange of money.
 
 \section{Technical specification}
 
 \subsection{Software used}
 
-The website will be built using Ruby 2.6 and the framework Ruby on Rails 6.0. We chose Ruby and Rails because we like the simplicity of the language and we want to expand our knowledge on this framework. Ruby on Rails allows us to save time for CRUD (Create, read, update and delete) operations and allows us to focus on feature that differentiate our wesbite. Moreover, Ruby on Rails follows the MVC architecture (Model, View, Controller) which will help us keep our code clean and organized in a specific folder arborescence and seperate our code depending on its use (models, controllers, routes, helpers, and so on.
+The website will be built using Ruby 2.6 and the framework Ruby on Rails 6.0. We chose Ruby and Rails because we like the simplicity of the language and we want to expand our knowledge on this framework. Ruby on Rails allows us to save time for CRUD (Create, read, update and delete) operations and allows us to focus on feature that differentiate our website. Moreover, Ruby on Rails follows the MVC architecture (Model, View, Controller) which will help us keep our code clean and organized in a specific folder arborescence and separate our code depending on its use (models, controllers, routes, helpers, and so on.
 
 Rails also enables us to implement a REST API which can be used if we use a front end Javascript framework like Vue.js or if we end up working on a mobile app. The REST API would use JSON and would be a layer above the CRUD operations.
 
-For the version controlling system, we chose git hosted on the GitHub service. Our repository is public so we don't have any limitation and we are able to be four collaborators on it. We use GitHub's board feature called "Projects" to organize our project with a Kanban-like workflow management method. We have a board for this very paper called "Documentation" and an other one for the actual implementation which will help us keep track of what's been done when coding the wesite.
+For the version controlling system, we chose git hosted on the GitHub service. Our repository is public so we don't have any limitation and we are able to be four collaborators on it. We use GitHub's board feature called "Projects" to organize our project with a Kanban-like workflow management method. We have a board for this very paper called "Documentation" and an other one for the actual implementation which will help us keep track of what's been done when coding the website.
 
-For the develpment environment half of our team is using macOS and the other half is using Windows 10. Our text editor of choice is VS Code.
+For the development environment half of our team is using macOS and the other half is using Windows 10. Our text editor of choice is VS Code.
 
 \subsection{Hosting}
 
-Our stack only requires Ruby and a DBMS (Database Management System) which is PostgreSQL. For this matter, we chose Heroku which is a hosting provider focusing on easing the deployment process for the developpers. Thus, we will be able to deploy our code to a development environment or production environment via the command line using Heroku as a Git remote or via the Heroku CLI (Command Line Interface) client.
+Our stack only requires Ruby and a DBMS (Database Management System) which is PostgreSQL. For this matter, we chose Heroku which is a hosting provider focusing on easing the deployment process for the developers. Thus, we will be able to deploy our code to a development environment or production environment via the command line using Heroku as a Git remote or via the Heroku CLI (Command Line Interface) client.
 
 The deployment can also be made from GitHub using their new CI/CD system called GitHub actions, from which we can deploy to Heroku using the Heroku Action which is a wrapper for the CLI. This helps keeping track of the deployments made and ensures the code running is the one in the version control system.
 
 For our initial release we don't expect a very high number of users, hence the choice of the free plan for Heroku as well as Heroku's managed service. The only cost for now would be the domain name which costs about \$10/year.
 
 
-\section{Role assignement}
+\section{Role assignment}
 
 \begin{tabular}{ |p{0.2\linewidth}|p{0.15\linewidth}|p{0.45\linewidth}| }
 \hline
@@ -98,9 +98,9 @@ Development manager & Stephane & Work distribution and time, deadline management
 
 \section{Requirements}
 
-\subsection{Signup page}
+\subsection{Sign-up page}
 
-The signup section should show these fields:
+The sign-up section should show these fields:
 
 \begin{itemize}
     \item First Name
@@ -110,7 +110,7 @@ The signup section should show these fields:
     \item Email
     \item Password
     \item Password confirmation
-    \item Anti-robot captcha verification
+    \item Anti-robot Captcha verification
     \item Sign up button
 \end{itemize}
 
@@ -231,7 +231,7 @@ events)
 \item Users have the ability to archive past events without leaving them, archived events don’t show up on the My Meetings timeline
 \end{enumerate}
 
-\subsection{Page for an individiual meeting}
+\subsection{Page for an individual meeting}
 
 From the My Meetings page as well as the Home Feed users can access the page of each individual meeting by clicking on its card in the Feed or My Meetings page.
 
@@ -269,11 +269,11 @@ On this page, the user has to fill a form with fields corresponding to the follo
 \begin{enumerate}
 
 \item Name (required): Text field, maximum 50 characters, only alphanumeric
-\item Type (required): 2 Dropdown menus, 1 for the main category, can only select one item between (Sport, Outdoor, Entertainment, Culture, Food, Education), this selection is required
+\item Type (required): 2 Drop-down menus, 1 for the main category, can only select one item between (Sport, Outdoor, Entertainment, Culture, Food, Education), this selection is required
 
-The 2nd dropdown menu will be updated depending on the choice of the 1st dropdown menu, can only select one item, this selection is not required (‘----’ if nothing is chosen)
+The 2nd drop-down menu will be updated depending on the choice of the 1st drop-down menu, can only select one item, this selection is not required (‘----’ if nothing is chosen)
 
-A ‘Other’ item is present in the 2nd dropdown menu list, if selected a new text field will appear (20 characters, only alphanumeric) with precision of the item written by the user, not required.
+A ‘Other’ item is present in the 2nd drop-down menu list, if selected a new text field will appear (20 characters, only alphanumeric) with precision of the item written by the user, not required.
 \item Date (required): A text field which is not editable by the user, next to it a button with a calendar icon, when the user clicks on the field or the calendar icon, a new calendar pops out with previous dates in gray (not selectable), user can navigate through the years, months and select the date, when selected, the calendars hides and the text field is filled with the selected date.
 \item Time (required): Drop down menu, items are all daily hours in a 15 minutes separation, user has to select one item.
 \item Location (required): Search bar coming from google locations API, user will type the location name and a list of locations known by google will appear (autocomplete), user has to select one, a button next to the text field with a map icon is also available, when clicked, a map will pop up and the user can drag a pointer to the location, if the given point doesn’t correspond to any of the google API’s location, the location will be updated as cardinal coordinates.
@@ -323,7 +323,7 @@ A ‘Other’ item is present in the 2nd dropdown menu list, if selected a new t
         \item Buttons to show more/ show less (+ or -) on top of the timeline to select the scope of the timeline
         \begin{enumerate}
             \item Enables the user to switch between Years/Months/Days to control the level of detail on the timeline
-            \item Purpose: more organized MyMeetings page in case multiple meezings for a specific date, more organized overall display for many meetings
+            \item Purpose: more organized MyMeetings page in case multiple meetings for a specific date, more organized overall display for many meetings
         \end{enumerate}
         \item Meetings are listed along the timeline as they occurred
         \begin{enumerate}
@@ -434,7 +434,7 @@ The page of each individual meeting contains all relevant information about the 
     \item To exit the page of an individual meeting, click on the small Exit button in the upper right corner (X)
 \end{enumerate}
 
-\subsection{Signup page}
+\subsection{Sign-up page}
 
 \begin{enumerate}
     \item With a Google Account
@@ -449,5 +449,3 @@ The page of each individual meeting contains all relevant information about the 
 \end{enumerate}
 
 \end{document}
-
-
