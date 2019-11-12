@@ -167,11 +167,11 @@ The meeting cards should show:
     \item Location: Precise location with exact address and redirection to google maps when address is clicked
     \item Time and duration: Meeting time and expected duration of the meeting
     \item Price: Can be free, estimated or undefined
-    \item Current participant number, expected participant number, max participant number: expected and participant numbers are not mandatory information. Possibility to click on current participants to display the list of current participants and access to their profile
+    \item Current participant number, expected participant number, max participant number: expected and max participant numbers are not mandatory information. Possibility to click on current participant number to display the list of current participants and access to their profile
     \item Details: Text field with additional details from the meeting organizer, the details should be expandable/collapsible if too long
-    \item Ask to Join Button (logged in user only): This button will open a new window with a message to send to the meeting organizer for joining the meeting. A default message is proposed to the user, but he can make his own. Join and Cancel Buttons available.
-    \item Add to Favorites Button (logged in user only): Button to save the meeting in a list of favorites meetings
-    \item Remove from feed button: A little cross at the top right of the card that removes the card from the feed
+    \item Ask to Join Button (logged user only): This button will open a new window with a message to send to the meeting organizer for joining the meeting. A default message is proposed to the user, but he can make his own. Join and Cancel Buttons available.
+    \item Add to Favorites Button (logged user only): Button to save the meeting in a list of favorites meetings
+    \item Remove from feed button: A little cross on the top right of the card that removes the card from the feed
 \end{enumerate}
 
 If the user clicks on a meeting card, he will be redirected to the meeting information page.
@@ -182,7 +182,7 @@ The Home page should show the logo, the log in/log out/sign-up section, the menu
 
 The meeting feed from the home page should only show the non archived meetings.
 
-In addition to that, the home page should show a location search bar in top of the page. 
+In addition to that, the home page should show a location search bar on top of the page. 
 
 The user should be able to change his location from a list of registered cities in the world.
 
@@ -213,19 +213,19 @@ A sign-up button should be present at the bottom of the sign-up section.
 
 When the user presses the sign-up button considering all the information given is valid, the user must click the verification link sent by email to confirm his account creation and have access to the website as a logged user.
 
-\subsection{User profile page}
+\subsection{User public profile page}
 
-The user profile page should show the logo, the log in/log out/sign-up section, the menu and a user profile section.
+The user public profile page should show the logo, the log in/log out/sign-up section, the menu and a user profile section.
 
 This page is public and accessible to any logged user.
 
-The user profile page is the view of all the public information of a user profile, it should show the user name, profile picture, location and past meetings he participated in.
+The user profile page is the view of all the public information of a user profile, it should show by default the username, profile picture, location and past meetings he participated in.
 
 A logged user should be able to open a private chat room with another user by clicking a Message button on his user profile page.
 
-\subsection{User profile edition page}
+\subsection{User private profile page}
 
-The user profile edition page should show the logo, the log in/log out/sign-up section, the menu and a user profile/account setting section.
+The user private profile page should show the logo, the log in/log out/sign-up section, the menu and a user profile/account setting section.
 
 This page is used to set up the user personal information and account settings. 
 
@@ -258,15 +258,15 @@ Required information should be the name of the meeting, the type of meeting, the
 
 The form should have a create/save button as well as a cancel Button. 
 
-The create/save button will trigger a confirmation window summing up all the given information and asking the organizer to confirm the meeting creation/edition or go back to editing the meeting. 
+The create/save button will trigger a confirmation window summing up all the given information and asking the organizer to confirm the meeting creation/edition or go back to meeting edition. 
 
 If the organizer confirms the meeting creation/edition, it will create/edit the meeting and it will be uploaded/updated to all the other users meeting feed (in the region). 
 
 The cancel button should reset the form.
 
-A picture for the new meeting card will be automatically uploaded from a bank of images, the chosen image will have to be the most accurate possible regarding the meeting.
+A picture for the new meeting card will be automatically uploaded from a bank of images, the chosen image will have to be the most accurate possible regarding the meeting type.
 
-Once the meeting is created the user will be set to organizer for this meeting and a chat room for this meeting will be created in the user chat page. 
+Once the meeting is created the user will be set organizer of this meeting and a chat room for this meeting will be created in the user chat page. 
 
 The organizer is the administrator of this chat room and each time a new participant will ask to join the meeting, the organizer will have to either accept/deny his participation from this chat room.
 
@@ -417,7 +417,7 @@ This page should also include a link to the usage and data collection policies o
 
 If one of the information above is not valid, the non valid information will be highlighted in red in the form with a short message to indicate to the user that a correction is needed.
 
-\subsection{User profile page}
+\subsection{User public profile page}
 
 The user profile section should be in the center of the page.
 
@@ -425,7 +425,7 @@ The user picture should be on top left of the user profile section, next to it s
 
 Under the user general public information should be a meetings feed with all the past 5 meetings he participated in.
 
-\subsection{User profile edition page}
+\subsection{User private profile page}
 
 The user profile/account setting section should be in the center of the page.
 
