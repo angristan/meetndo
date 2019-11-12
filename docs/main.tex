@@ -107,395 +107,449 @@ Development manager & Stephane & Work distribution and time, deadline management
 
 \section{Requirements}
 
-\subsection{Sign-up page}
+\subsection{Logo}
 
-The sign-up section should show these fields:
+The meet\&do logo should be visible on each page of the website.
 
-\begin{itemize}
-    \item First Name
-    \item Name
-    \item Gender
-    \item Date of Birth
-    \item Email
-    \item Password
-    \item Password confirmation
-    \item Anti-robot Captcha verification
-    \item Sign up button
-\end{itemize}
+\subsection{Menu}
 
-When the user presses the sign-up button considering all
-the information given is valid, the user must click the verification link sent by email to create his account and have access to the home page.
+A menu should be accessible on each page of the website. It should be a list of links to other pages. The pages accessible from this menu should be:
 
-\subsection{Login page}
+\begin{enumerate}
+    \item Home page
+    \item User profile page (logged user only)
+    \item User meetings page (logged user only)
+    \item Create a meeting page (logged user only)
+    \item Chat room page (logged user only)
+\end{enumerate}
 
-The login section should show 2 fields: username and password fields as well as a login button.
+\subsection{Log in/Log out/Sign-up section}
 
-\subsection{Home page}
+A section on each page of the website should be reserved to log in, log out, or sign-up. 
 
-Once the user created his account or correctly logged in, he should have access to the home page.
+The log in section should show 2 fields: username and password fields and a log in button, next to the log in section should appear a link to the sign-up page (if the user is not logged). 
 
-The website should be able to localize the user city precisely and state it on the Home page. It also should give the user the possibility to change his location from a list of registered cities in the world.
+The log out section should just show a button to log out (if the user is logged).
 
-The user should be able to log in from a Login button at the top right of the home page (if not logged in). The login section should show 2 fields: username and password fields as well as a login button.
+\subsection{Filters section}
 
-The user should be able to log out from a Logout button at the top right of the home page (if logged in).
+The filter section should appear on all pages having a meetings feed: Home page and User meetings page.
 
-If the user is not logged in and tries to access to logged in user sections (such as personal information) the access will be denied and Login section will be highlighted to inform the user to sign up or log in in order to access this section.
+It should give the user the possibility to filter the meetings feed results considering meetings:
 
+\begin{enumerate}
+    \item Type
+    \item Date/Time
+    \item Duration
+    \item Number of participants
+    \item Location (km radius from user current location or a selected location)
+    \item Price
+\end{enumerate}
 
-\subsection{Feed section}
+This section should give the user possibility to reset all filters, to filter the results given the mentioned filters and restore the removed meetings to the feed.
 
-A search bar allows the user to search for a particular meeting.
-The home page should show a feed of meetings. The feed should only show non-archived meetings, be sorted from the nearest upcoming date at the top of the page to the latest date at the bottom of the page. The feed should show all types of meetings.
+\subsection{Search bar}
+
+A search bar allows the user to search for a particular meeting. This search bar should be accessible on all pages having a meetings feed.
+
+\subsection{Meetings feed}
+
+The meetings feed should show a list of meeting cards. 
+
+The feed should be sorted in chronological order from the nearest upcoming date at the top of the page to the latest date at the bottom of the page. The feed should show all types of meetings.
 
 The meeting cards should show:
 
 \begin{enumerate}
-\item Name and/or Type: Restaurant
-(Lunch/Dinner/Brunch...), Sport (Tennis/Football/Swimming...), Study Lesson (Chemistry/Mathematics/Economics...), Entertainment (Theater/Outdoor show/ Concert...), Art Practice (Painting/Music...)
-\item Location: Precise location with exact address and redirection to google maps when address is clicked
-\item Time and duration: Meeting time and expected duration
-of the activity
-\item Price: Can be undefined if free activity or if the price is
-not equally shared
-\item Current participant number, expected participant
-number, max participant number: expected and participant numbers are not mandatory information.
-Possibility to click on current participants to display the
-list of current participants and access to their profile
-\item Details: Text field with additional details from the meeting organizer, the details should be
-expandable/collapsible if too long.
-\item Visual: Most precise visual describing the meeting, it can
-be a promotional photo of a restaurant, the poster of a show, an illustration of Mathematics, ... Whatever visual that can describe the meeting type the most precisely possible
-\item Ask to Join Button: This button will open a new window with a message to send to the meeting organizer for joining the meeting. A default message is proposed to the user, but he can make his own. Join and Cancel Buttons available.
-\item Remove from feed button: A little cross at the top right of the card that removes the card from the feed
+    \item Picture: Most precise visual describing the meeting, it can be a promotional photo of a restaurant, the poster of a show, an illustration of Mathematics, ... Whatever visual that can describe the meeting type the most precisely possible
+    \item Name of the meeting
+    \item Type: Food (Lunch/Dinner/Brunch...), Sport (Tennis/Football/Swimming...), Education (Chemistry/Mathematics/Economics...), Entertainment (Theater/Show/Concert...), Art (Painting/Music...), Outdoors (Hiking/Running...)
+    \item Location: Precise location with exact address and redirection to google maps when address is clicked
+    \item Time and duration: Meeting time and expected duration of the meeting
+    \item Price: Can be free, estimated or undefined
+    \item Current participant number, expected participant number, max participant number: expected and participant numbers are not mandatory information. Possibility to click on current participants to display the list of current participants and access to their profile
+    \item Details: Text field with additional details from the meeting organizer, the details should be expandable/collapsible if too long
+    \item Ask to Join Button (logged in user only): This button will open a new window with a message to send to the meeting organizer for joining the meeting. A default message is proposed to the user, but he can make his own. Join and Cancel Buttons available.
+    \item Add to Favorites Button (logged in user only): Button to save the meeting in a list of favorites meetings
+    \item Remove from feed button: A little cross at the top right of the card that removes the card from the feed
 \end{enumerate}
 
-\subsection{Search Filters}
+If the user clicks on a meeting card, he will be redirected to the meeting information page.
 
-The filter section should give the user the possibility to filter the feed results considering:
+\subsection{Home page}
 
-\begin{enumerate}
-\item The type of meetings
-\item The Date/Time of meetings
-\item The Duration of meetings
-\item Number of participants
-\item A location filter (km radius from his current
-location)
-\item Reset all filters
-\item Filter button
-\item Restore removed meetings
-\end{enumerate}
+The Home page should show the logo, the log in/log out/sign-up section, the menu, the meetings feed, the filter section and the search bar.
 
-\subsection{User section}
+The meeting feed from the home page should only show the non archived meetings.
 
-The user section should give the possibility to the user to
-access his personal profile page and settings. Each user has a public profile with a limited set of information such as their name, profile picture, location and past meetings they participated in. An edit page is available for them to update these public details.
+In addition to that, the home page should show a location search bar in top of the page. 
 
-Private information such as email, password, account deletion, etc. are available on a different page called account settings.
+The user should be able to change his location from a list of registered cities in the world.
 
-\subsection{Chat section}
+If the user is not logged, the website should be able to determine the user location and set it as default location.
 
-This page should let a user talk to other users via private
-messages.
-
-A left column should contain a list of people that the user
-has already contacted, and a right column should contain an opened chat between the current user and another user.
-
-The user’s list should display full names and user profile photos. Next to each users' names, something should let the current user know that a user has sent a new message that he/she has not seen already.
-
-The opened chat should contain all messages sent by people included in the chat. The current user should be able to see his/her messages on the right side. Next to each message, a user should be able to see the time (hour format) of receipt of a message.
-
-\subsection{User’s meeting section}
-
-From the user section, which is a menu on the homepage
-the user can select a page with all his personal meetings that he is participating in or has shown interest in participating in. This page is called My Meetings. It can be found under this name in the user section.
-
-The basic structure of this page is a list of all the user’s events. All events all displayed chronologically in a timeline format. The user is able to scroll through the timeline and search all content by keywords or different filters.
-
-Other requirements for the My Meetings page:
-
-\begin{enumerate}
-\item A search bar on top of the site to search through all of the
-user’s meetings (past and upcoming)
-\item Meetings can be searched by keywords, location, type of
-meeting, tags of a meeting
-\item Drop down menu next to the search bar to choose what
-type of content is displayed
-\item Show all meetups
-\item Timeframe (choose between past and future
-events)
-\item Type of meeting (4 main categories)
-\item Only show favorite meetups
-\item Show archived meetups
-\item On the right side of the bar there is a timeline that indicates dates of meetings, user can scroll through the timeline to navigate the page faster
-\item Meetings are listed along the timeline with their individual dates as they occurred
-\item All meetings are displayed in chronological order (the most recent first)
-\item Different colors for different types of meetings, same as on the homepage
-\item The user has the ability to highlight certain meetups which are then given a more prominent location on the page
-\item Highlighted meetups are marked as favorites and pinned on top of the page, regardless of their dates
-\item User’s favorites can be past events as well as upcoming ones
-\item The ‘highlights’ section on top of the page is visibly separated from the rest of the chronologically displayed events
-\item Users have the ability to remove meetups from their personalized My Meetings page by “leaving” a meetup
-\item In the same way meetups are added to the My Meetings page by ‘joining’ a meetup
-\item Users have the ability to archive past events without leaving them, archived events don’t show up on the My Meetings timeline
-\end{enumerate}
-
-\subsection{Page for an individual meeting}
-
-From the My Meetings page as well as the Home Feed users can access the page of each individual meeting by clicking on its card in the Feed or My Meetings page.
-
-The page for a certain meeting displays all relevant information added by the creator of the meetings as well as a chatroom and list of people who joined.
-
-\begin{enumerate}
-\item All relevant information as well as a title picture are displayed on a blackboard on top of the page (type of meetup, description, location, date, for how many people is planned, etc)
-\item Underneath there is a chatroom to which everyone who joined the event has access to
-\item All users can access the event page and read information but only users who participate are able to join the chat
-\item Users have to ability to ask questions to the creator of a meeting prior to joining
-\item On the page of the meeting users have the ability to join the meeting, mark the meeting as “I am interested”, or share a link to the event via social media
-\item Users have to ability to hide an event from their home feed if they choose to
-\end{enumerate}
-
-\subsection{Create new meeting}
-
-This page should present a form to create a new meeting
-which the user will be the organizer of. Required information should be the name of the event (text field), the type of meeting (choose one from a list), the date of the meeting (normalized calendar date) and the meeting location (address from google maps, should be the most accurate possible).
-
-Other information such as the duration of the meeting (numerical value in minutes), the price of the meeting (in local asset, undefined if not stated, otherwise numerical value), the expected and maximum number of participants (numerical values) and some additional details on the meeting (text field).
-
-The form should have a create button as well as a cancel Button. The create button will trigger a confirmation window summing up all the given information and asking the organizer to confirm the meeting creation or go back to editing the meeting. If the organizer confirms the meeting creation, it will create the meeting and it will be uploaded to all the other users meeting feed (in the region). The cancel button should reset the form.
-
-A visual for the new meeting card will be automatically uploaded from a bank of images, the chosen image will have to be the most accurate possible regarding the meeting.
-Once the meeting is created, a chat group for this meeting will be created in the chat section. The organizer is basically the administrator of this chat group and each time a new participant will ask to join the meeting, the organizer will
-have to either accept/deny his participation from this group chat.
-Once the meeting is created, a card will be added to the user’s ‘My meetings’ page and only the organizer will be able to edit or delete the meeting.
-
-\section{Specification}
-
-\subsection{Create new meeting}
-
-On this page, the user has to fill a form with fields corresponding to the following:
-
-\begin{enumerate}
-
-\item Name (required): Text field, maximum 50 characters, only alphanumeric
-\item Type (required): 2 Drop-down menus, 1 for the main category, can only select one item between (Sport, Outdoor, Entertainment, Culture, Food, Education), this selection is required
-
-The 2nd drop-down menu will be updated depending on the choice of the 1st drop-down menu, can only select one item, this selection is not required (‘----’ if nothing is chosen)
-
-A ‘Other’ item is present in the 2nd drop-down menu list, if selected a new text field will appear (20 characters, only alphanumeric) with precision of the item written by the user, not required.
-\item Date (required): A text field which is not editable by the user, next to it a button with a calendar icon, when the user clicks on the field or the calendar icon, a new calendar pops out with previous dates in gray (not selectable), user can navigate through the years, months and select the date, when selected, the calendars hides and the text field is filled with the selected date.
-\item Time (required): Drop down menu, items are all daily hours in a 15 minutes separation, user has to select one item.
-\item Location (required): Search bar coming from google locations API, user will type the location name and a list of locations known by google will appear (autocomplete), user has to select one, a button next to the text field with a map icon is also available, when clicked, a map will pop up and the user can drag a pointer to the location, if the given point doesn’t correspond to any of the google API’s location, the location will be updated as cardinal coordinates.
-\item Duration: Text field with only numeric characters accepted, from 0 to 1440 (24 hours), if text field is not filled in, it is considered as ‘undefined’.
-\item Price: Price per participant, text field with only numeric characters accepted, from 0 to 999999999999999, if text field is not filled in, it is considered as ‘undefined’. The asset used is the one from the country of the set location.
-\item Expected participants:Text field with only numeric characters accepted, from 0 to 999999999, if text field is not filled in, it is considered as ‘undefined’.
-\item Maximum participants: Text field with only numeric characters accepted, from 0 to 999999999, if text field is not filled in, it is considered as ‘undefined’.
-\item Details: Text field, details are to be written from the organizer, 5 lines of text max, only alphanumeric characters.
-\item Create Button: Opens a new page with all the form but the information are not editable (grayed areas), the only editable field is the picture of the event (selected in the google bank of images depending on the type and location of the meeting). The user can select the graphic used from this bank of images that will appear in the meeting card. The user can then Confirm? Yes/No, if No, back to the form, the new page pops out, if yes meeting is created and back to home page.
-\item Cancel Button: Resets the form after alerting the user with an alert box (Confirm? Yes/No) if confirmed
-\end{enumerate}
-
-\subsection{User’s meetings section}
-
-\begin{enumerate}
-    \item Header with MeetnDo logo and MyMeetings title
-    \item White page background
-    \item Search bar
-    \begin{enumerate}
-        \item Search bar on top of the page to search meetings by keywords
-        \item Results are drawn from a database of all of the user’s past and present meetings
-        \item When executing a search results are displayed as a list on the MyMeetings page
-        \item Users can click on the result to reach the page of the individual meeting
-        \item Feature to to guess the user’s search request by keywords, associated meetings are recommended (auto-complete for search requests)
-    \end{enumerate}
-    \item Meetings can be searched by keywords, location, type of meeting, tags of a meeting
-    \item Ability to filter search result
-    \begin{enumerate}
-        \item Drop down arrow next to the search bar to filter what results are displayed
-        \item Implementation of checkbox selection filter (by clicking downward arrow user is taken to the checkbox selection)
-        \begin{enumerate}
-            \item Show all meetings checkbox selected by default
-            \item Checkbox to select type of meeting (Food, Study, Sports, Activities)
-            \item Checkbox to filter by location (select nearby, my area, all)
-            \item Checkbox to select the timeframe (only show past meetings, only show future meetings)
-            \item Checkbox to only show meetings marked as favorites
-            \item Checkbox to only show archived meetings
-        \end{enumerate}
-    \end{enumerate}
-    \item Timeline on the right side of the MyMeetings page
-    \begin{enumerate}
-        \item User can move through the timeline by scrolling on the page
-        \begin{enumerate}
-            \item Marker on the timeline indicates the current position/date
-            \item User’s have the ability to navigate the page faster by clicking and dragging the marker across the timeline or scrolling directly on the timeline
-        \end{enumerate}
-        \item Buttons to show more/ show less (+ or -) on top of the timeline to select the scope of the timeline
-        \begin{enumerate}
-            \item Enables the user to switch between Years/Months/Days to control the level of detail on the timeline
-            \item Purpose: more organized MyMeetings page in case multiple meetings for a specific date, more organized overall display for many meetings
-        \end{enumerate}
-        \item Meetings are listed along the timeline as they occurred
-        \begin{enumerate}
-            \item Listed chronologically by default
-        \end{enumerate}
-    \end{enumerate}
-    \item  Meetings on the MyMeetings page are displayed in boxes
-    \begin{enumerate}
-        \item Box includes title of specific meeting in bold letters
-        \item Short, general descriptions as preview that users choose when creating a meeting
-        \item Location of meeting
-        \item Indicator for rough amount of people attending/ interested in specific meeting e.g. <10, 10+
-        \item Boxes feature slightly rounded corners
-    \end{enumerate}
-    \item Different colored boxes for a well arranged layout and usability
-    \begin{enumerate}
-        \item Distinguished by the 4 general types of meetings
-        \begin{enumerate}
-            \item Red for Food
-            \item Yellow for Education
-            \item Light Green for Sports
-            \item Dark Green for Outdoor
-            \item Orange for Culture
-            \item Blue for Entertainment
-        \end{enumerate}
-        \item Hex transparency 50\%
-    \end{enumerate}
-    \item ‘Highlights’ section pinned above the regular timeline view
-    \begin{enumerate}
-        \item User has the ability to mark meetings as favorites
-        \begin{enumerate}
-            \item Star symbol in the right corner of every meeting box
-            \item By default only outlines, by clicking the star is displayed yellow thus marked as favorite
-        \end{enumerate}
-        \item ‘Highlights’ section visibly divided from the rest of the timeline by light yellow background
-    \end{enumerate}
-    \item Controls over content shown on MyMeetings page
-    \begin{enumerate}
-        \item Ability to remove meetings from MyMeetings
-        \begin{enumerate}
-            \item Leave specific meeting via right click or designated button on the page of the individual meeting
-        \end{enumerate}
-            \item Ability to add meeting to MyMeetings
-        \begin{enumerate}
-            \item Via right click on homepage or designated button ‘Join Meeting’ on the page of the individual meeting
-            \item Mark meeting as ‘I’m interested’ on the individual page of the meeting
-        \end{enumerate}
-        \item Ability to archive past meetings without leaving
-        \begin{enumerate}
-        \item By right click or designated button ‘Archive’ on the page of the individual meeting
-        \item Archived meetings are not shown on the timeline of MyMeetings but can still be searched for
-        \item Archived meetings are displayed with grey background
-        \end{enumerate}
-    \end{enumerate}
-\end{enumerate}
-
-\subsection{Page of an individual meeting}
-
-The page of each individual meeting contains all relevant information about the event. Users can access the page from anywhere e.g. from the Home Feed, MyMeetings or a user’s profile by simply clicking on the box or the title of a specific meeting. All users are able to access the page of a meeting.
-
-\begin{enumerate}
-    \item Background of the page is shown in the same color as the meeting box but at 10\% opacity
-    \item Title of the meeting on top of the page in bold letters
-    \item Contains all information about the meeting
-    \begin{enumerate}
-        \item Type of meeting (as bullet point beneath headline)
-        \item Description of the meeting as put in by the creator of the meeting as ‘Details’
-        \begin{enumerate}
-            \item Text field, Maximum 5 lines of text, alphanumeric characters only
-        \end{enumerate}
-        \item General information displayed as
-        \begin{enumerate}
-            \item ‘ When: "dddd, dd MMMM yyyy HH:mm" ‘ as chosen by the creator
-            \item Approximate duration is stated underneath date and time, if the creator has provided a duration
-            \item Location of the event displayed on the right of time, date and duration
-            \begin{enumerate}
-                \item Section of the map where the meeting will take place is embedded in the page through Google Maps API/HTML (small window)
-                \item Google Maps pin on the map marks the exact location
-                \item Written address/location is displayed beneath the Google Maps window
-                \item By clicking on the map the user is taken to Google Maps with the event location marked
-            \end{enumerate}
-            \item Price per participant is displayed underneath as ‘Price: Value’
-            \begin{enumerate}
-                \item If no price provided, ‘Price’ is not shown
-                \item If price is indicated as 0, it is displayed as ‘Price: Free’
-                \item If no specific price provided, price can also be displayed as an estimate as chosen by the creator (\$/\$\$/\$\$\$)
-            \end{enumerate}
-            \item Expected participants as ‘Expected participants: Value’ if provided by creator
-            \item Maximum participants as ‘Maximum participants: Value’ if provided by creator
-            \item Beneath, the creator/host of the meeting is indicated by displaying a small, circular profile picture as well as the name
-            \begin{enumerate}
-                \item Users can click on the creator to be taken to the person’s profile page
-            \end{enumerate}
-        \end{enumerate}
-    \end{enumerate}
-    \item Underneath the information about the meetings there are buttons the user can click, those buttons are aligned
-    \begin{enumerate}
-        \item ‘Join’ button to join the meeting
-        \item ‘I’m interested’ button to mark as interested in
-        \item ‘Join Chat room’ button, only becomes visible once the user has joined the meeting
-        \item Links to a chat page of the individual meeting
-        \item ‘Share’ buttons from various social media plugins to share on social media platforms
-        \item ‘Not interested’ button, on the lower right corner and smaller than the other buttons
-        \begin{enumerate}
-            \item Meetings marked as ‘Not interested’ will not be suggested to the user again on the Home Feed
-        \end{enumerate}
-    \end{enumerate}
-    \item To exit the page of an individual meeting, click on the small Exit button in the upper right corner (X)
-\end{enumerate}
-
-\includegraphics[scale=0.3]{mockups/meeting}
+If the user is logged, the location used by default will be the one inquired in the user profile.
 
 \subsection{Sign-up page}
 
-\begin{enumerate}
-    \item With a Google Account
-    \item With an email
-    \begin{enumerate}
-        \item Name --- Text field, 50 characters max, can’t be empty
-        \item Email address --- Text field, 255 characters max, unique and can’t be empty
-        \item Password --- Text field (password type), 255 characters max, can’t be empty
-        \item Confirmation password --- should match the password
-        \item Location --- Text field which is auto-completed via an API (or a table in database)
-    \end{enumerate}
-\end{enumerate}
+The sign-up page should show the logo, the log in/log out/sign-up section, the menu and a sign-up section.
 
-\subsection{Chat page}
-    The chat section is divided in two columns. The left column contains an opened chat room. The right column contains a list of already started chat rooms (discussions) which contain at least one message.
-    \begin{enumerate}
-        \item Left column: open discussion
-        \begin{enumerate}
-            \item A header holding conversation partner's information
-            \begin{enumerate}
-                \item Rounded user profile picture. By clicking it redirects to this user profile page
-                \item Full Name: clicking it redirects to this user profile page
-            \end{enumerate}
-            \item A chat room when messages are displayed. Next to each message is displayed the send time.
-            \begin{enumerate}
-                \item Left side contains messages received from conversation partners.
-                \item Right side contains messages sent by the user.
-            \end{enumerate}
-            \item Area where a message is written. A message can contain text and/or a GIF. A message can not be empty.
-            \begin{enumerate}
-                \item Text field: alphanumeric and special caracters, no limitation
-                \item GIF: the user can click a GIPHY button and search for a GIF by typing a keyword in a search box
-                \item Submit button
-            \end{enumerate}
-        \end{enumerate}
-        \item Right column: chat rooms list. Each item are clickable and redirects to profile
-            \begin{enumerate}
-                \item Rounded user profile picture
-                \item Full Name
-            \end{enumerate}
-\end{enumerate}
+The sign-up section should ask the user to fill in the following information:
 
-\subsection{Profile page}
-The page contains all public information about a user.
 \begin{enumerate}
-    \item Profile picture
-    \item Full name
+    \item First Name
+    \item Name
+    \item Gender
+    \item Date of Birth
+    \item Username
+    \item Email
     \item Location
-    \item Description
-    \item Meetup list
+    \item Password
+    \item Password confirmation
+    \item Anti-bot Captcha verification
 \end{enumerate}
+
+A sign-up button should be present at the bottom of the sign-up section.
+
+When the user presses the sign-up button considering all the information given is valid, the user must click the verification link sent by email to confirm his account creation and have access to the website as a logged user.
+
+\subsection{User profile page}
+
+The user profile page should show the logo, the log in/log out/sign-up section, the menu and a user profile section.
+
+This page is public and accessible to any logged user.
+
+The user profile page is the view of all the public information of a user profile, it should show the user name, profile picture, location and past meetings he participated in.
+
+A logged user should be able to open a private chat room with another user by clicking a Message button on his user profile page.
+
+\subsection{User profile edition page}
+
+The user profile edition page should show the logo, the log in/log out/sign-up section, the menu and a user profile/account setting section.
+
+This page is used to set up the user personal information and account settings. 
+
+The user should be able to edit his general profile/account information and configure his account settings such as private or public information, email, username, password or account deletion on this page.
+
+\subsection{Create/Edit a meeting}
+
+The Create/Edit a meeting page should show the logo, the log in/log out/sign-up section, the menu and a meeting information section.
+
+This page is accessible from the menu (Create a meeting page) or from the edit button of a meeting information page which the user is the organizer of.
+
+From this page, the user should be able to create a new meeting by filling a form or edit the form of an existing meeting.
+
+The form should ask the user to fill in the following information:
+
+\begin{enumerate}
+    \item Name
+    \item Type
+    \item Date
+    \item Time
+    \item Location
+    \item Duration
+    \item Price
+    \item Expected participants
+    \item Maximum participants
+    \item Details
+\end{enumerate}
+
+Required information should be the name of the meeting, the type of meeting, the date of the meeting and the meeting location.
+
+The form should have a create/save button as well as a cancel Button. 
+
+The create/save button will trigger a confirmation window summing up all the given information and asking the organizer to confirm the meeting creation/edition or go back to editing the meeting. 
+
+If the organizer confirms the meeting creation/edition, it will create/edit the meeting and it will be uploaded/updated to all the other users meeting feed (in the region). 
+
+The cancel button should reset the form.
+
+A picture for the new meeting card will be automatically uploaded from a bank of images, the chosen image will have to be the most accurate possible regarding the meeting.
+
+Once the meeting is created the user will be set to organizer for this meeting and a chat room for this meeting will be created in the user chat page. 
+
+The organizer is the administrator of this chat room and each time a new participant will ask to join the meeting, the organizer will have to either accept/deny his participation from this chat room.
+
+Once the meeting is created, a card will be added to the user meetings page and only the organizer will be able to edit or delete the meeting.
+
+Editing a meeting should show the same form as for creating a new meeting.
+
+\subsection{Meeting information page}
+
+The meeting information page should show the logo, the log in/log out/sign-up section, the menu and a meeting information section.
+
+From the meeting information page, the user will be able to view all the information about the meeting, organizer and participants will also be visible from this view.
+
+The user will be able from this page to ask to join the meeting/quit the meeting, save the meeting as a favorite, open the chat room of the meeting if he is already a participant or share the meeting link.
+
+An edit button and a delete button will be available for the organizer to edit the meeting from the Create/Edit meeting page or delete the meeting.
+
+\subsection{User meetings page}
+
+This page should have mostly the same content as the home page: the logo, the log in/log out/sign-up section, the menu, the meetings feed, a filters section and a search bar.
+
+The difference is in the meetings feed, the meetings shown will be the meetings the user has participated in, that he will participate in or that he has saved as favorites.
+
+\subsection{Chat room page}
+
+This page should let a user talk to other users via private messages.
+
+It should contain the logo, the log in/log out/sign-up section, the menu, a list of all the user chat rooms and a chat section. 
+
+The list of chat rooms should include all the chat rooms created for the user's ongoing or past meetings and all other private chat rooms.
+
+The chat rooms list should display username and user profile picture for private chats and meeting name and meeting picture for meeting chat rooms. 
+
+Next to each chat room, something should let the current user know that a user has sent a new message that he/she has not seen already.
+
+The opened chat room should contain all messages sent by people included in the chat room. The current user should be able to see his/her messages on the right side. Next to each message, a user should be able to see the time (hour format) of receipt of a message.
+
+From this page, the organizer of a meeting can examine the requests to join the meeting and accept them or deny them.
+
+\section{Specifications}
+
+\subsection{Logo}
+
+The logo should be displayed on the top left of each page and always visible (independent from scrolling).
+
+By clicking on the meet\&do logo the user is redirected to the home page.
+
+\subsection{Menu}
+
+The user clicks on an item of the menu to be redirected to the concerned page.
+
+The menu should always be shown as a rectangular area on the center left of the page and always visible (independent from scrolling).
+
+When a user wants to access a logged user restricted page without being logged, the access is denied, no redirection is made and a message pops up to warn the user that the access to this page is restricted and that he has to log in to access its content.
+
+\subsection{Log in/Log out/Sign-up section}
+
+This section should be displayed fixed on the top right corner of each page and always visible (independent from scrolling).
+
+This section should switch between 2 modes: either the user is logged and a simple "log out" button is shown, otherwise when the user is not logged, 2 text fields should be shown filled in with placeholders "username/email" and "password", a button to log in and a link to the sign-up page.
+
+When a user tries to access a logged in user restricted page without being logged, or when the username/password entered to log in is false, this section highlights in red.
+
+\subsection{Filters section}
+
+The filter section, when displayed, should be symmetrical to the menu: a rectangular area on the center right of the screen and always visible (in dependant from scrolling).
+
+Filtering should work as such:
+
+\begin{enumerate}
+    \item Filter by Type: Drop-down menu with a list of all the 6 main different types of meetings (Food, Sport, Education, Entertainment, Art, Outdoors), the user can select multiple items from that menu.
+    \item Filter by Date/Time: 2 fields for the dates, one for the earliest date, one for the latest date, by clicking on one of these fields, a calendar pops up to select the date. For the time, the user will place 2 cursors for the earliest and latest dates on a timeline of 24hrs, the step should be 30 minutes.
+    \item Filter by Duration: 2 cursors to place on a timeline for the shortest to longest duration, the shortest duration is 0 (can be a really short meeting or an undefined duration) and the longest is 24 hours, step is 30 minutes.
+    \item Filter by Number of participants: 2 cursors to place on a horizontal line going from 0 to 50 people with a step of 1. 
+    \item Filter by Location: 1 cursor to place on a horizontal line going from 1 to 200 kilometers, step is 1 kilometer. This sets the radius of the area covered by the circle taking the user current location as center. A button to place the center of the circle on a map should also be available, if the user clicks on it, a map pops up and the user can drag a pin to the location he wants the center of the researched area to be.
+    \item Filter by Price: 2 cursors to place on an horizontal line going from 'Free' to a maximum value (values are 'Free', '\$', '\$\$' and '\$\$\$').
+\end{enumerate}
+
+The filtered results will include the limit values given by the user.
+
+By default, all the cursor will be set to include the total ranges.
+
+2 buttons and 1 checkbox should be appear at the bottom of the filters section: 1 for searching the filtered results "Search", 1 to reset all the filters given by the user "Reset" and 1 checkbox to restore the meetings that were removed from the meetings feed "Restore removed meetings".
+
+\subsection{Search bar}
+
+The search bar should be display in the center top of the page, above the meetings feed.
+
+The search bar should work with auto-complete method when the user is typing his research, it should be a long text field with placeholder "Search ..." accepting all alphanumerical characters. It should search for correspondence in meetings names, locations, types, details and participants.
+
+\subsection{Meetings feed}
+
+The meetings feed should show all the meeting card in the same format (size, shape, information display). 
+
+The feed should be displayed in the center of the screen.
+
+The feed should be scrollable with infinite scrolling, showing at first the 20 first upcoming meetings, and adding 20 more meetings at each bottom scroll.
+
+At least 4 meeting cards should be visible without scrolling.
+
+The feed should have a timeline with a date indicator on the right side of it, allowing the user to navigate through meetings by dragging a cursor/scrolling in the timeline.
+
+Buttons to show more/ show less (+ or -) on top of the timeline to select the scope of the timeline. It enables the user to switch between Years/Months/Days to control the level of detail on the timeline.
+
+Each meeting card should have a different color depending on the meeting type:
+
+\begin{enumerate}
+    \item Red for Food
+    \item Yellow for Education
+    \item Light Green for Sports
+    \item Dark Green for Outdoor
+    \item Orange for Art
+    \item Blue for Entertainment
+\end{enumerate}
+
+Hex transparency of 50\%.
+
+The meetings feed should be at least 50\% of the screen width.
+
+\subsection{Home page}
+
+The home page should ask for the user's location if the user doesn't have a default location, if the user declines, the meetings feed will be shown empty with an information message in it.
+
+The Location setting section of the home page should be displayed in the center top of the page: above the search bar.
+
+\subsection{Sign-up page}
+
+The sign-up form should be displayed in the center of the page.
+
+The user should be able to sign-up with a Google account, in this case, all the required information of the user will be automatically filled in from the Google account.
+
+Limitations for each sign-up information are as such:
+
+\begin{enumerate}
+    \item First Name: alphanumeric characters [1-50]
+    \item Name: alphanumeric characters [1-50]
+    \item Gender: check boxes [Male, Female, None of the above]
+    \item Date of Birth: text field with calendar selection [1/1/1990 - current date]
+    \item Username (Required): alphanumeric characters [1-50], should check the availability of the username
+    \item Email (Required): format [:alnum:+'@'+:alnum:+'.'+:alnum:'], maximum 255 characters
+    \item Location: search bar with auto-complete from a list of all cities in the world (coming from an API or table in the database)
+    \item Password (Required): alphanumeric characters [1-255] with a safety level indicator
+    \item Password confirmation (Required): should be the same as the above
+    \item Anti-bot Captcha verification (Required): ReCAPTCHA from Google
+\end{enumerate}
+
+This page should also include a link to the usage and data collection policies of the website and a checkbox stating the user has read the terms and accepts them.
+
+If one of the information above is not valid, the non valid information will be highlighted in red in the form with a short message to indicate to the user that a correction is needed.
+
+\subsection{User profile page}
+
+The user profile section should be in the center of the page.
+
+The user picture should be on top left of the user profile section, next to it should be his general public information: username, first name, name, gender, date of birth, location and a button to message him.
+
+Under the user general public information should be a meetings feed with all the past 5 meetings he participated in.
+
+\subsection{User profile edition page}
+
+The user profile/account setting section should be in the center of the page.
+
+It should present the user profile picture, 1 form called "General information" and a section called "Account settings".
+
+The user profile picture should be displayed on the top left of the section. By clicking on it a window should pop up to give the user the possibility to upload a new profile picture from his computer.
+
+The "General information" form should be next to the user profile picture, it has its information fields grayed and is not editable.
+
+The information of the "General information" form are username, first name, name, gender, date of birth and location.
+
+At the bottom of this form should be an Edit button (enabled), Save button (disabled) and Cancel button (disabled). 
+
+If the Edit button is clicked, the Save button and the Cancel button are enabled and the Edit button disabled, it also make the "General information" form editable/enabled.
+
+If the user clicks on the Cancel button and confirms it, the "General information" form is reset to its initial state and disabled, the edit button is enabled and the Save and Cancel button disabled.
+
+If the user clicks on the Save button and confirms it, the "General information" form is updated and disabled, the edit button is enabled and the Save and Cancel button disabled.
+
+The Account section should contain the following information: email, password, public/private information setting and account deletion.
+
+If the user wants to change its email, he has to confirm the change through a link sent to the new email address.
+
+If the user wants to change its password, he has to enter the current password and confirm the new one.
+
+The public/private information setting should allow the user to set the following information as either private or public: first name, name, gender, date of birth, location and email.
+
+If the user clicks on the "Delete my account" option, a confirmation message will pop up and if the user confirms it, he will be logged out, his account will be totally deleted and redirected to the home page.
+
+\subsection{Create/Edit a meeting}
+
+The meeting creation/edition section should be displayed in the center of the page.
+
+Limitations on meeting creation/edition should be as such:
+
+\begin{enumerate}
+    \item Name (Required): Text field, maximum 50 characters, only alphanumeric
+    \item Type (Required): 2 Drop-down menus, 1 for the main category, can only select one item between (Sports, Outdoor, Entertainment, Art, Food, Education), this selection is required. The 2nd drop-down menu will be updated depending on the choice of the 1st drop-down menu, can only select one item, this selection is not required (‘----’ if nothing is chosen). A ‘Other’ item is present in the 2nd drop-down menu list, if selected a new text field will appear (50 characters max, only alphanumeric) with precision of the type of meeting written by the organizer, not required.
+    \item Date (Required): A text field which is not editable by the user, next to it a button with a calendar icon, when the user clicks on the field or the calendar icon, a new calendar pops up with previous dates in gray (not selectable), user can navigate through the years, months and select the date, when selected, the calendars hides and the text field is filled with the selected date.
+    \item Time (Required): 2 Drop-down menus, 1 for the hours (0 to 24 with a step of 1 hour) and one for the minutes (0 to 45 with a step of 15 minutes).
+    \item Location (Required): Search bar coming from google locations API, user will type the location name and a list of locations known by google will appear (auto-complete method), user has to select one, a button next to the text field with a map icon is also available, when clicked, a map will pop up and the user can drag a pointer to the location, if the given point doesn’t correspond to any of the google API’s location, the location will be updated as cardinal coordinates.
+    \item Duration: 2 Drop-down menus, 1 for the hours (0 to 24 with a step of 1 hour) and one for the minutes (0 to 45 with a step of 15 minutes). If not set, it is considered as ‘undefined’ (duration = 0).
+    \item Price: Drop-down menu representing the price per participant, items are 'Free', '\$', '\$\$' or '\$\$\$'. If no item is selected, it is considered as ‘undefined’.
+    \item Expected participants:Text field with only numeric characters accepted, from 0 to 50, if text field is not filled in, it is considered as ‘undefined’ (max participants = 0).
+    \item Maximum participants: Text field with only numeric characters accepted, from 0 to 50, if text field is not filled in, it is considered as ‘undefined’ (expected participants = 0).
+    \item Details: Text field, details are to be written from the organizer, 5 lines of text max, only alphanumeric characters.
+\end{enumerate}
+
+Create/Save Button: Opens a new window with all the summed up information but the information is not editable, the only editable field is the picture of the event (selected in the google bank of images depending on the type and location of the meeting). 
+
+The user can select the picture used from this bank of images that will appear in the meeting card. 
+
+The user can then Confirm? Yes/No, if No, back to the edition form, the new page pops out, if yes meeting is created/edited and back to home page.
+
+Cancel Button: Resets the form after confirmation of the user from an alert box popping up (Confirm? Yes/No).
+
+\subsection{Meeting information page}
+
+Users can access the page from any page having a meeting feed e.g. from the home page or the user meetings page by simply clicking on the card or the title of a specific meeting. 
+
+The page of each individual meeting contains all relevant information about the meeting, the meeting information section is displayed in the center of the page. 
+
+All users are able to access the page of a meeting.
+
+The background color of the meeting information section is same color as the meeting card but at 10\% opacity.
+
+The information shown in this section are as such:
+
+\begin{enumerate}
+    \item Title of the meeting: on top of the section in bold letters
+    \item Type of meeting: as bullet point beneath headline
+    \item Description of the meeting: as put in by the creator of the meeting as ‘Details’, text field, maximum 5 lines of text, alphanumeric characters only
+    \item Date and Time: ‘ When: "dddd, dd MMMM yyyy HH:mm" ‘ as chosen by the creator
+    \item Duration: approximate duration is stated underneath date and time, if the creator has provided a duration
+    \item Location: displayed on the right of time, date and duration, as a mini map (Google Maps API/HTML) with the pinned location, the written location beneath the mini map. By clicking on the map the user is taken to Google Maps with the meeting location pinned
+    \item Price per participant: is displayed underneath as ‘Price: Value’. If no price provided, ‘Price’ is not shown
+    \item Expected participants: as ‘Expected participants: Value’ if provided by creator
+    \item Maximum participants: as ‘Maximum participants: Value’ if provided by creator
+    \item Organizer of the meeting: is indicated by displaying a small, circular profile picture as well as the name. Users can click on the organizer to be taken to the organizer's profile page
+\end{enumerate}
+
+Underneath the information about the meeting there are buttons the user can click, those buttons are aligned:
+
+\begin{enumerate}
+    \item ‘Join’/'Quit' button to ask to join/quit the meeting
+    \item ‘Favorites’ button to save the meeting as a favorite, displayed as a star symbol button
+    \item ‘Share’ buttons from various social media plugins to share on social media platforms
+    \item ‘Join Chat room’ button, only becomes visible once the user has joined the meeting, redirects the user to the concerned chat room in the chat rooms page
+\end{enumerate}
+
+To exit the page of an individual meeting, click on the small Exit button in the upper right corner (X), this will take the user back to the previous page.
+
+\subsection{User meetings page}
+
+The user meetings page should show 3 meetings feeds.
+
+These 3 meetings feeds should be displayed one above the other in the center of the page.
+
+The first meetings feed should show only meetings saved as favorites, the second one should show the meetings the user will be attending and the last one should show the previous meetings the user has joined.
+
+Each meetings feed should have a header with an arrow on top right of the header to collapse/expand the feed.
+
+Each feed should be scrollable but only 5 meeting cards should be visible at the same time (limited feed height).
+
+These feeds should be dynamic and updated each time the user adds/removes a meeting from the favorites list, join/quit a meeting.
+
+\subsection{Chat room page}
+
+The the opened chat should be displayed on the center of the page and the available chat rooms should be displayed on the center right of the page.
+
+Each time the user clicks on a chat room from the chat room list, it opens the chat on the center section. 
+
+The title and picture of the opened chat room is displayed on top of the chat, underneath the title and picture of the chat room is written the participants as a list of username.
+
+The messages sent by the organizer should have a special color. 
+
+When a user asks to join a meeting, the organizer receives a message in the concerned chat room with the name of the user wanting to join the meeting and a link to his profile, the organizer can then accept the request or deny it through this message.
+
+\section{Design}
+
+\subsection{Mock-ups}
+
+\subsubsection{Meeting information page}
+
+\includegraphics[scale=0.3]{mockups/meeting}
 
 \end{document}
