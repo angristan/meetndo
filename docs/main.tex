@@ -42,51 +42,88 @@ marc-antoine.dariel@cpe.fr}
 \maketitle
 
 \begin{abstract}
-meet\&do is a website that aims to put people in touch who have similar interests and hobbies or need help with issues related to their studies. Enthusiasts can find each other through the website and share real-life activities together.
+meet\&do is a website that aims to put people in touch who have similar interests and hobbies or need help with issues related to their studies. 
+Enthusiasts can find each other through the website and share real-life activities together.
 \end{abstract}
 
 \section{Introduction}
 
-Nowadays, we are more connected than ever through social media and all kinds of internet-based services yet somehow people are still isolated from each other. Forming friendships and relationships has become challenging for some as it is easy and convenient to hide behind a social media profile. Everyone has an online presence. In this environment, many may find themselves looking for real-life interactions.
+Nowadays, we are more connected than ever through social media and all kinds of internet-based services yet somehow people are still isolated from each other. 
+Forming friendships and relationships has become challenging for some as it is easy and convenient to hide behind a social media profile. 
+Everyone has an online presence. 
+In this environment, many may find themselves looking for real-life interactions.
 
-We want to create a website that aims at putting people in touch who have similar interests and hobbies or need help with issues related to their studies. Getting in touch online is easy but that is just the first step. After finding people with the same interests and making appointments, users of our website meet in real life. Meeting new people works best if you are already interested in similar fields and activities and we want to put people together who have those in common. Common interests to bond over and meet up again in the future or form new friendships.
+We want to create a website that aims at putting people in touch who have similar interests and hobbies or need help with issues related to their studies. 
+Getting in touch online is easy but that is just the first step. 
+After finding people with the same interests and making appointments, users of our website meet in real life. 
+Meeting new people works best if you are already interested in similar fields and activities and we want to put people together who have those in common. 
+Common interests to bond over and meet up again in the future or form new friendships.
 
-Where already existing alternatives might take a more generic approach, we want to create a solution that gives users the opportunity to choose what they are looking for from the beginning. Therefore, the website will be divided into four main areas. That makes it less confusing and easy and intuitive to navigate.
+Where already existing alternatives might take a more generic approach, we want to create a solution that gives users the opportunity to choose what they are looking for from the beginning. 
+Therefore, the website will be divided into four main areas. 
+That makes it less confusing and easy and intuitive to navigate.
 
 \section{Alternatives}
 
 
 \subsection{Jodel}
 
-Jodel is a Social Media platform from Germany that aims particularly at university students and connecting people who are in the same area. User’s can share content, however events as such can’t be created. It is only available on mobile operating systems and has no website. Users in an area can’t see posts other than those made locally. Posts are assigned colors which are chosen randomly. The platform is available in several languages and European countries.
+Jodel is a Social Media platform from Germany that aims particularly at university students and connecting people who are in the same area. 
+User’s can share content, however events as such can’t be created. 
+It is only available on mobile operating systems and has no website. 
+Users in an area can’t see posts other than those made locally. 
+Posts are assigned colors which are chosen randomly. 
+The platform is available in several languages and European countries.
 
 \subsection{Meetup.com}
- Meetup is the competitor with the most similarities to our project. The website offers a service used to organize online groups that host real life events for people with similar interests. Events of all kinds can be hosted which don’t have to conform to certain categories. Also, event organizers have to pay a fee to host events. The website is available in many languages.
+
+ Meetup is the competitor with the most similarities to our project. 
+ The website offers a service used to organize online groups that host real life events for people with similar interests. 
+ Events of all kinds can be hosted which don’t have to conform to certain categories. 
+ Also, event organizers have to pay a fee to host events. 
+ The website is available in many languages.
 
 \subsection{Others}
-Various other social networks like Facebook that also include the feature to create and host events. In essence, all social media platforms fulfill similar functions that aim at communication and gathering people. Some of them, like Facebook, have inbuilt Event Managers to create and host events. Others, like Instagram and Twitter, allow users to track events and participating people via hashtags.
 
-Differentiating aspects of MeetnDo: While Jodel restricts the user’s view to their local area and is not suitable to host events, our project aims at events that can be hosted anywhere the user chooses and offering a clear and user friendly interface which is color coded by event type for a more organized experience. Also, Meetup.com takes a wider and more generic approach which is something we want to avoid in order to make the service more accessible and less overwhelming. For that reason our service offers preset categories that make it easy for the user to determine whether they are potentially interested in an event.
+Various other social networks like Facebook that also include the feature to create and host events. 
+In essence, all social media platforms fulfill similar functions that aim at communication and gathering people. 
+Some of them, like Facebook, have inbuilt Event Managers to create and host events. 
+Others, like Instagram and Twitter, allow users to track events and participating people via hashtags.
+
+Differentiating aspects of MeetnDo: While Jodel restricts the user’s view to their local area and is not suitable to host events, our project aims at events that can be hosted anywhere the user chooses and offering a clear and user friendly interface which is color coded by event type for a more organized experience. 
+Also, Meetup.com takes a wider and more generic approach which is something we want to avoid in order to make the service more accessible and less overwhelming. 
+For that reason our service offers preset categories that make it easy for the user to determine whether they are potentially interested in an event.
 
 \section{Technical specification}
 
 \subsection{Software used}
 
-The website will be built using Ruby 2.6 and the framework Ruby on Rails 6.0. We chose Ruby and Rails because we like the simplicity of the language and we want to expand our knowledge on this framework. Ruby on Rails allows us to save time for CRUD (Create, read, update and delete) operations and allows us to focus on feature that differentiate our website. Moreover, Ruby on Rails follows the MVC architecture (Model, View, Controller) which will help us keep our code clean and organized in a specific folder arborescence and separate our code depending on its use (models, controllers, routes, helpers, and so on.
+The website will be built using Ruby 2.6 and the framework Ruby on Rails 6.0. We chose Ruby and Rails because we like the simplicity of the language and we want to expand our knowledge on this framework. 
+Ruby on Rails allows us to save time for CRUD (Create, read, update and delete) operations and allows us to focus on feature that differentiate our website. 
+Moreover, Ruby on Rails follows the MVC architecture (Model, View, Controller) which will help us keep our code clean and organized in a specific folder arborescence and separate our code depending on its use (models, controllers, routes, helpers, and so on.
 
-Rails also enables us to implement a REST API which can be used if we use a front end Javascript framework like Vue.js or if we end up working on a mobile app. The REST API would use JSON and would be a layer above the CRUD operations.
+Rails also enables us to implement a REST API which can be used if we use a front end Javascript framework like Vue.js or if we end up working on a mobile app. 
+The REST API would use JSON and would be a layer above the CRUD operations.
 
-For the version controlling system, we chose git hosted on the GitHub service. Our repository is public so we don't have any limitation and we are able to be four collaborators on it. We use GitHub's board feature called "Projects" to organize our project with a Kanban-like workflow management method. We have a board for this very paper called "Documentation" and an other one for the actual implementation which will help us keep track of what's been done when coding the website.
+For the version controlling system, we chose git hosted on the GitHub service. 
+Our repository is public so we don't have any limitation and we are able to be four collaborators on it. 
+We use GitHub's board feature called "Projects" to organize our project with a Kanban-like workflow management method. 
+We have a board for this very paper called "Documentation" and an other one for the actual implementation which will help us keep track of what's been done when coding the website.
 
-For the development environment half of our team is using macOS and the other half is using Windows 10. Our text editor of choice is VS Code.
+For the development environment half of our team is using macOS and the other half is using Windows 10. 
+Our text editor of choice is VS Code.
 
 \subsection{Hosting}
 
-Our stack only requires Ruby and a DBMS (Database Management System) which is PostgreSQL. For this matter, we chose Heroku which is a hosting provider focusing on easing the deployment process for the developers. Thus, we will be able to deploy our code to a development environment or production environment via the command line using Heroku as a Git remote or via the Heroku CLI (Command Line Interface) client.
+Our stack only requires Ruby and a DBMS (Database Management System) which is PostgreSQL. 
+For this matter, we chose Heroku which is a hosting provider focusing on easing the deployment process for the developers. 
+Thus, we will be able to deploy our code to a development environment or production environment via the command line using Heroku as a Git remote or via the Heroku CLI (Command Line Interface) client.
 
-The deployment can also be made from GitHub using their new CI/CD system called GitHub actions, from which we can deploy to Heroku using the Heroku Action which is a wrapper for the CLI. This helps keeping track of the deployments made and ensures the code running is the one in the version control system.
+The deployment can also be made from GitHub using their new CI/CD system called GitHub actions, from which we can deploy to Heroku using the Heroku Action which is a wrapper for the CLI. 
+This helps keeping track of the deployments made and ensures the code running is the one in the version control system.
 
-For our initial release we don't expect a very high number of users, hence the choice of the free plan for Heroku as well as Heroku's managed service. The only cost for now would be the domain name which costs about \$10/year.
+For our initial release we don't expect a very high number of users, hence the choice of the free plan for Heroku as well as Heroku's managed service. 
+The only cost for now would be the domain name which costs about \$10/year.
 
 
 \section{Role assignment}
@@ -113,7 +150,10 @@ The meet\&do logo should be visible on each page of the website.
 
 \subsection{Menu}
 
-A menu should be accessible on each page of the website. It should be a list of links to other pages. The pages accessible from this menu should be:
+A menu should be accessible on each page of the website. 
+
+It should be a list of links to other pages. 
+The pages accessible from this menu should be:
 
 \begin{enumerate}
     \item Home page
@@ -150,13 +190,15 @@ This section should give the user possibility to reset all filters, to filter th
 
 \subsection{Search bar}
 
-A search bar allows the user to search for a particular meeting. This search bar should be accessible on all pages having a meetings feed.
+A search bar allows the user to search for a particular meeting. 
+This search bar should be accessible on all pages having a meetings feed.
 
 \subsection{Meetings feed}
 
 The meetings feed should show a list of meeting cards. 
 
-The feed should be sorted in chronological order from the nearest upcoming date at the top of the page to the latest date at the bottom of the page. The feed should show all types of meetings.
+The feed should be sorted in chronological order from the nearest upcoming date at the top of the page to the latest date at the bottom of the page. 
+The feed should show all types of meetings.
 
 The meeting cards should show:
 
@@ -167,9 +209,12 @@ The meeting cards should show:
     \item Location: Precise location with exact address and redirection to google maps when address is clicked
     \item Time and duration: Meeting time and expected duration of the meeting
     \item Price: Can be free, estimated or undefined
-    \item Current participant number, expected participant number, max participant number: expected and max participant numbers are not mandatory information. Possibility to click on current participant number to display the list of current participants and access to their profile
+    \item Current participant number, expected participant number, max participant number: expected and max participant numbers are not mandatory information. 
+    Possibility to click on current participant number to display the list of current participants and access to their profile
     \item Details: Text field with additional details from the meeting organizer, the details should be expandable/collapsible if too long
-    \item Ask to Join Button (logged user only): This button will open a new window with a message to send to the meeting organizer for joining the meeting. A default message is proposed to the user, but he can make his own. Join and Cancel Buttons available.
+    \item Ask to Join Button (logged user only): This button will open a new window with a message to send to the meeting organizer for joining the meeting. 
+    A default message is proposed to the user, but he can make his own. 
+    Join and Cancel Buttons available.
     \item Add to Favorites Button (logged user only): Button to save the meeting in a list of favorites meetings
     \item Remove from feed button: A little cross on the top right of the card that removes the card from the feed
 \end{enumerate}
@@ -183,7 +228,6 @@ The Home page should show the logo, the log in/log out/sign-up section, the menu
 The meeting feed from the home page should only show the non archived meetings.
 
 In addition to that, the home page should show a location search bar on top of the page. 
-
 The user should be able to change his location from a list of registered cities in the world.
 
 If the user is not logged, the website should be able to determine the user location and set it as default location.
@@ -209,8 +253,7 @@ The sign-up section should ask the user to fill in the following information:
     \item Anti-bot Captcha verification
 \end{enumerate}
 
-A sign-up button should be present at the bottom of the sign-up section.
-
+A sign-up button should be present at the bottom of the sign-up section. 
 When the user presses the sign-up button considering all the information given is valid, the user must click the verification link sent by email to confirm his account creation and have access to the website as a logged user.
 
 \subsection{User public profile page}
@@ -228,7 +271,6 @@ A logged user should be able to open a private chat room with another user by cl
 The user private profile page should show the logo, the log in/log out/sign-up section, the menu and a user profile/account setting section.
 
 This page is used to set up the user personal information and account settings. 
-
 The user should be able to edit his general profile/account information and configure his account settings such as private or public information, email, username, password or account deletion on this page.
 
 \subsection{Create/Edit a meeting}
@@ -238,7 +280,6 @@ The Create/Edit a meeting page should show the logo, the log in/log out/sign-up 
 This page is accessible from the menu (Create a meeting page) or from the edit button of a meeting information page which the user is the organizer of.
 
 From this page, the user should be able to create a new meeting by filling a form or edit the form of an existing meeting.
-
 The form should ask the user to fill in the following information:
 
 \begin{enumerate}
@@ -256,21 +297,18 @@ The form should ask the user to fill in the following information:
 
 Required information should be the name of the meeting, the type of meeting, the date of the meeting and the meeting location.
 
-The form should have a create/save button as well as a cancel Button. 
+The form should have a create/save button and a cancel Button. 
 
 The create/save button will trigger a confirmation window summing up all the given information and asking the organizer to confirm the meeting creation/edition or go back to meeting edition. 
-
 If the organizer confirms the meeting creation/edition, it will create/edit the meeting and it will be uploaded/updated to all the other users meeting feed (in the region). 
-
-The cancel button should reset the form.
+Once the meeting is created, a card will be added to the user meetings page and only the organizer will be able to edit or delete the meeting.
 
 A picture for the new meeting card will be automatically uploaded from a bank of images, the chosen image will have to be the most accurate possible regarding the meeting type.
 
 Once the meeting is created the user will be set organizer of this meeting and a chat room for this meeting will be created in the user chat page. 
-
 The organizer is the administrator of this chat room and each time a new participant will ask to join the meeting, the organizer will have to either accept/deny his participation from this chat room.
 
-Once the meeting is created, a card will be added to the user meetings page and only the organizer will be able to edit or delete the meeting.
+The cancel button should reset the form.
 
 Editing a meeting should show the same form as for creating a new meeting.
 
@@ -297,12 +335,13 @@ This page should let a user talk to other users via private messages.
 It should contain the logo, the log in/log out/sign-up section, the menu, a list of all the user chat rooms and a chat section. 
 
 The list of chat rooms should include all the chat rooms created for the user's ongoing or past meetings and all other private chat rooms.
-
 The chat rooms list should display username and user profile picture for private chats and meeting name and meeting picture for meeting chat rooms. 
 
 Next to each chat room, something should let the current user know that a user has sent a new message that he/she has not seen already.
 
-The opened chat room should contain all messages sent by people included in the chat room. The current user should be able to see his/her messages on the right side. Next to each message, a user should be able to see the time (hour format) of receipt of a message.
+The opened chat room should contain all messages sent by people included in the chat room. 
+The current user should be able to see his/her messages on the right side. 
+Next to each message, a user should be able to see the time (hour format) of receipt of a message.
 
 From this page, the organizer of a meeting can examine the requests to join the meeting and accept them or deny them.
 
@@ -338,10 +377,13 @@ Filtering should work as such:
 
 \begin{enumerate}
     \item Filter by Type: Drop-down menu with a list of all the 6 main different types of meetings (Food, Sport, Education, Entertainment, Art, Outdoors), the user can select multiple items from that menu.
-    \item Filter by Date/Time: 2 fields for the dates, one for the earliest date, one for the latest date, by clicking on one of these fields, a calendar pops up to select the date. For the time, the user will place 2 cursors for the earliest and latest dates on a timeline of 24hrs, the step should be 30 minutes.
+    \item Filter by Date/Time: 2 fields for the dates, one for the earliest date, one for the latest date, by clicking on one of these fields, a calendar pops up to select the date. 
+    For the time, the user will place 2 cursors for the earliest and latest dates on a timeline of 24hrs, the step should be 30 minutes.
     \item Filter by Duration: 2 cursors to place on a timeline for the shortest to longest duration, the shortest duration is 0 (can be a really short meeting or an undefined duration) and the longest is 24 hours, step is 30 minutes.
     \item Filter by Number of participants: 2 cursors to place on a horizontal line going from 0 to 50 people with a step of 1. 
-    \item Filter by Location: 1 cursor to place on a horizontal line going from 1 to 200 kilometers, step is 1 kilometer. This sets the radius of the area covered by the circle taking the user current location as center. A button to place the center of the circle on a map should also be available, if the user clicks on it, a map pops up and the user can drag a pin to the location he wants the center of the researched area to be.
+    \item Filter by Location: 1 cursor to place on a horizontal line going from 1 to 200 kilometers, step is 1 kilometer. 
+    This sets the radius of the area covered by the circle taking the user current location as center. 
+    A button to place the center of the circle on a map should also be available, if the user clicks on it, a map pops up and the user can drag a pin to the location he wants the center of the researched area to be.
     \item Filter by Price: 2 cursors to place on an horizontal line going from 'Free' to a maximum value (values are 'Free', '\$', '\$\$' and '\$\$\$').
 \end{enumerate}
 
@@ -353,25 +395,15 @@ By default, all the cursor will be set to include the total ranges.
 
 \subsection{Search bar}
 
-The search bar should be display in the center top of the page, above the meetings feed.
+The search bar should be displayed in the center top of the page, above the meetings feed.
 
-The search bar should work with auto-complete method when the user is typing his research, it should be a long text field with placeholder "Search ..." accepting all alphanumerical characters. It should search for correspondence in meetings names, locations, types, details and participants.
+The search bar should work with auto-complete method when the user is typing his research, it should be a long text field with placeholder "Search ..." accepting all alphanumerical characters. 
+It should search for correspondence in meetings names, locations, types, details and participants.
 
 \subsection{Meetings feed}
 
-The meetings feed should show all the meeting card in the same format (size, shape, information display). 
-
-The feed should be displayed in the center of the screen.
-
-The feed should be scrollable with infinite scrolling, showing at first the 20 first upcoming meetings, and adding 20 more meetings at each bottom scroll.
-
-At least 4 meeting cards should be visible without scrolling.
-
-The feed should have a timeline with a date indicator on the right side of it, allowing the user to navigate through meetings by dragging a cursor/scrolling in the timeline.
-
-Buttons to show more/ show less (+ or -) on top of the timeline to select the scope of the timeline. It enables the user to switch between Years/Months/Days to control the level of detail on the timeline.
-
-Each meeting card should have a different color depending on the meeting type:
+The meetings feed should show all the meeting card in the same format (size, shape, layout). 
+Each meeting card should have a different color depending on the meeting type (Hex transparency of 50\%):
 
 \begin{enumerate}
     \item Red for Food
@@ -382,9 +414,15 @@ Each meeting card should have a different color depending on the meeting type:
     \item Blue for Entertainment
 \end{enumerate}
 
-Hex transparency of 50\%.
-
+The feed should be displayed in the center of the screen.
 The meetings feed should be at least 50\% of the screen width.
+
+The feed should be scrollable with infinite scrolling, showing at first the 20 first upcoming meetings, and adding 20 more meetings at each bottom scroll.
+At least 4 meeting cards should be visible without scrolling.
+
+The feed should have a timeline with a date indicator on the right side of it, allowing the user to navigate through meetings by dragging a cursor/scrolling in the timeline.
+Buttons to show more/ show less (+ or -) on top of the timeline to select the scope of the timeline. 
+It enables the user to switch between Years/Months/Days to control the level of detail on the timeline.
 
 \subsection{Home page}
 
@@ -428,27 +466,21 @@ Under the user general public information should be a meetings feed with all the
 \subsection{User private profile page}
 
 The user profile/account setting section should be in the center of the page.
-
 It should present the user profile picture, 1 form called "General information" and a section called "Account settings".
 
-The user profile picture should be displayed on the top left of the section. By clicking on it a window should pop up to give the user the possibility to upload a new profile picture from his computer.
+The user profile picture should be displayed on the top left of the section. 
+By clicking on it a window should pop up to give the user the possibility to upload a new profile picture from his computer.
 
-The "General information" form should be next to the user profile picture, it has its information fields grayed and is not editable.
-
+The "General information" form should be next to the user profile picture, have its information fields grayed and not editable at first.
 The information of the "General information" form are username, first name, name, gender, date of birth and location.
 
 At the bottom of this form should be an Edit button (enabled), Save button (disabled) and Cancel button (disabled). 
-
-If the Edit button is clicked, the Save button and the Cancel button are enabled and the Edit button disabled, it also make the "General information" form editable/enabled.
-
+If the Edit button is clicked, the Save button and the Cancel button are enabled and the Edit button disabled, it also makes the "General information" form editable/enabled.
 If the user clicks on the Cancel button and confirms it, the "General information" form is reset to its initial state and disabled, the edit button is enabled and the Save and Cancel button disabled.
-
 If the user clicks on the Save button and confirms it, the "General information" form is updated and disabled, the edit button is enabled and the Save and Cancel button disabled.
 
 The Account section should contain the following information: email, password, public/private information setting and account deletion.
-
 If the user wants to change his email, he has to confirm the change through a link sent to the new email address.
-
 If the user wants to change his password, he has to enter the current password and confirm the new one.
 
 The public/private information setting should allow the user to set the following information as either private or public: first name, name, gender, date of birth, location and email.
@@ -463,35 +495,36 @@ Limitations on meeting creation/edition should be as such:
 
 \begin{enumerate}
     \item Name (Required): Text field, maximum 50 characters, only alphanumeric
-    \item Type (Required): 2 Drop-down menus, 1 for the main category, can only select one item between (Sports, Outdoor, Entertainment, Art, Food, Education), this selection is required. The 2nd drop-down menu will be updated depending on the choice of the 1st drop-down menu, can only select one item, this selection is not required (‘----’ if nothing is chosen). A ‘Other’ item is present in the 2nd drop-down menu list, if selected a new text field will appear (50 characters max, only alphanumeric) with precision of the type of meeting written by the organizer, not required.
+    \item Type (Required): 2 Drop-down menus, 1 for the main category, can only select one item between (Sports, Outdoor, Entertainment, Art, Food, Education), this selection is required. 
+    The 2nd drop-down menu will be updated depending on the choice of the 1st drop-down menu, can only select one item, this selection is not required (‘----’ if nothing is chosen). 
+    A ‘Other’ item is present in the 2nd drop-down menu list, if selected a new text field will appear (50 characters max, only alphanumeric) with precision of the type of meeting written by the organizer, not required.
     \item Date (Required): A text field which is not editable by the user, next to it a button with a calendar icon, when the user clicks on the field or the calendar icon, a new calendar pops up with previous dates in gray (not selectable), user can navigate through the years, months and select the date, when selected, the calendars hides and the text field is filled with the selected date.
     \item Time (Required): 2 Drop-down menus, 1 for the hours (0 to 24 with a step of 1 hour) and one for the minutes (0 to 45 with a step of 15 minutes).
-    \item Location (Required): Search bar coming from google locations API, user will type the location name and a list of locations known by google will appear (auto-complete method), user has to select one, a button next to the text field with a map icon is also available, when clicked, a map will pop up and the user can drag a pointer to the location, if the given point doesn’t correspond to any of the google API’s location, the location will be updated as cardinal coordinates.
-    \item Duration: 2 Drop-down menus, 1 for the hours (0 to 24 with a step of 1 hour) and one for the minutes (0 to 45 with a step of 15 minutes). If not set, it is considered as ‘undefined’ (duration = 0).
-    \item Price: Drop-down menu representing the price per participant, items are 'Free', '\$', '\$\$' or '\$\$\$'. If no item is selected, it is considered as ‘undefined’.
+    \item Location (Required): Search bar coming from google locations API, user will type the location name and a list of locations known by google will appear (auto-complete method), user has to select one.
+    A button next to the text field with a map icon is also available, when clicked, a map will pop up and the user can drag a pointer to the location, if the given point doesn’t correspond to any of the google API’s location, the location will be updated as cardinal coordinates.
+    \item Duration: 2 Drop-down menus, 1 for the hours (0 to 24 with a step of 1 hour) and one for the minutes (0 to 45 with a step of 15 minutes). 
+    If not set, it is considered as ‘undefined’ (duration = 0).
+    \item Price: Drop-down menu representing the price per participant, items are 'Free', '\$', '\$\$' or '\$\$\$'. 
+    If no item is selected, it is considered as ‘undefined’.
     \item Expected participants:Text field with only numeric characters accepted, from 0 to 50, if text field is not filled in, it is considered as ‘undefined’ (max participants = 0).
     \item Maximum participants: Text field with only numeric characters accepted, from 0 to 50, if text field is not filled in, it is considered as ‘undefined’ (expected participants = 0).
     \item Details: Text field, details are to be written from the organizer, 5 lines of text max, only alphanumeric characters.
 \end{enumerate}
 
 Create/Save Button: Opens a new window with all the summed up information but the information is not editable, the only editable field is the picture of the event (selected in the google bank of images depending on the type and location of the meeting). 
-
 The user can select the picture used from this bank of images that will appear in the meeting card. 
-
 The user can then Confirm? Yes/No, if No, back to the edition form, the new page pops out, if yes meeting is created/edited and back to home page.
 
 Cancel Button: Resets the form after confirmation of the user from an alert box popping up (Confirm? Yes/No).
 
 \subsection{Meeting information page}
 
-Users can access the page from any page having a meeting feed e.g. from the home page or the user meetings page by simply clicking on the card or the title of a specific meeting. 
+Users can access this page from any page having a meeting feed e.g. from the home page or the user meetings page by simply clicking on the card or the title of a specific meeting. 
 
-The page of each individual meeting contains all relevant information about the meeting, the meeting information section is displayed in the center of the page. 
-
-All users are able to access the page of a meeting.
-
+The meeting information section is displayed in the center of the page. 
 The background color of the meeting information section is same color as the meeting card but at 10\% opacity.
 
+The page of each individual meeting contains all relevant information about the meeting.
 The information shown in this section are as such:
 
 \begin{enumerate}
@@ -500,12 +533,16 @@ The information shown in this section are as such:
     \item Description of the meeting: as put in by the creator of the meeting as ‘Details’, text field, maximum 5 lines of text, alphanumeric characters only
     \item Date and Time: ‘ When: "dddd, dd MMMM yyyy HH:mm" ‘ as chosen by the creator
     \item Duration: approximate duration is stated underneath date and time, if the creator has provided a duration
-    \item Location: displayed on the right of time, date and duration, as a mini map (Google Maps API/HTML) with the pinned location, the written location beneath the mini map. By clicking on the map the user is taken to Google Maps with the meeting location pinned
+    \item Location: displayed on the right of time, date and duration, as a mini map (Google Maps API/HTML) with the pinned location, the written location beneath the mini map. 
+    By clicking on the map the user is taken to Google Maps with the meeting location pinned
     \item Price per participant: is displayed underneath as ‘Price: Value’. If no price provided, ‘Price’ is not shown
     \item Expected participants: as ‘Expected participants: Value’ if provided by creator
     \item Maximum participants: as ‘Maximum participants: Value’ if provided by creator
-    \item Organizer of the meeting: is indicated by displaying a small, circular profile picture as well as the name. Users can click on the organizer to be taken to the organizer's profile page
+    \item Organizer of the meeting: is indicated by displaying a small, circular profile picture as well as the name. 
+    Users can click on the organizer to be taken to the organizer's profile page
 \end{enumerate}
+
+All users are able to access the page of a meeting.
 
 Underneath the information about the meeting there are buttons the user can click, those buttons are aligned:
 
@@ -515,7 +552,8 @@ Underneath the information about the meeting there are buttons the user can clic
     \item ‘Share’ buttons from various social media plugins to share on social media platforms
     \item ‘Join Chat room’ button, only becomes visible once the user has joined the meeting, redirects the user to the concerned chat room in the chat rooms page
     \item 'Edit' button, only accessible for the meeting organizer, should redirect the organizer to the Create/Edit a meeting page
-    \item 'Delete' button, only accessible for the meeting organizer, should delete the meeting after confirmation of the organizer. If a meeting is deleted, all the participants receive a message in the meeting chat room.
+    \item 'Delete' button, only accessible for the meeting organizer, should delete the meeting after confirmation of the organizer. 
+    If a meeting is deleted, all the participants receive a message in the meeting chat room.
 \end{enumerate}
 
 To exit the page of an individual meeting, click on the small Exit button in the upper right corner (X), this will take the user back to the previous page.
@@ -523,9 +561,7 @@ To exit the page of an individual meeting, click on the small Exit button in the
 \subsection{User meetings page}
 
 The user meetings page should show 3 meetings feeds.
-
 These 3 meetings feeds should be displayed one above the other in the center of the page.
-
 The first meetings feed should show only meetings saved as favorites, the second one should show the meetings the user will be attending and the last one should show the previous meetings the user has joined.
 
 Each meetings feed should have a header with an arrow on top right of the header to collapse/expand the feed.
@@ -536,13 +572,13 @@ These feeds should be dynamic and updated each time the user adds/removes a meet
 
 \subsection{Chat room page}
 
-The the opened chat should be displayed on the center of the page and the available chat rooms should be displayed on the center right of the page.
+The opened chat should be displayed on the center of the page and the available chat rooms should be displayed on the center right of the page.
 
 Each time the user clicks on a chat room from the chat room list, it opens the chat on the center section. 
 
 The title and picture of the opened chat room is displayed on top of the chat, underneath the title and picture of the chat room is written the participants as a list of username.
 
-The messages sent by the organizer should have a special color. 
+The messages sent by the organizer should have a special color.
 
 When a user asks to join a meeting, the organizer receives a message in the concerned chat room with the name of the user wanting to join the meeting and a link to his profile, the organizer can then accept the request or deny it through this message.
 
