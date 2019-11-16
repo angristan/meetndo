@@ -1,0 +1,14 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+inherit_from:
+  - .rubocop_airbnb.yml
+
+AllCops:
+  CacheRootDirectory: tmp/rubocop
+  Exclude:
+    - 'db/schema.rb'
+
+Rails:
+  Enabled: true
