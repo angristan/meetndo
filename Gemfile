@@ -25,6 +25,7 @@ end
 
 group :development do
   gem 'better_errors', '~> 2.5', '>= 2.5.1' # Provides a better error page for Rails and other Rack apps
+  gem 'did_you_mean', '~> 1.3', '>= 1.3.1' # The gem that has been saving people from typos since 2014
   gem 'listen', '>= 3.0.5', '< 3.2' # Listens to file modifications and notifies you about the changes. Works everywhere!
   gem 'spring' # Spring speeds up development by keeping your application running in the background
   gem 'spring-watcher-listen', '~> 2.0.0' # Makes spring watch files using the listen gem
