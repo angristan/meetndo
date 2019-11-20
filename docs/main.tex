@@ -537,6 +537,7 @@ The information shown in this section are as such:
     By clicking on the map the user is taken to Google Maps with the meeting location pinned
     \item Price per participant: is displayed underneath as ‘Price: Value’. If no price provided, ‘Price’ is not shown
     \item Expected participants: as ‘Expected participants: Value’ if provided by creator
+    \item Current participants: as ‘Current participants: Value’
     \item Maximum participants: as ‘Maximum participants: Value’ if provided by creator
     \item Organizer of the meeting: is indicated by displaying a small, circular profile picture as well as the name. 
     Users can click on the organizer to be taken to the organizer's profile page
@@ -563,12 +564,15 @@ To exit the page of an individual meeting, click on the small Exit button in the
 The user meetings page should show 3 meetings feeds.
 These 3 meetings feeds should be displayed one above the other in the center of the page.
 The first meetings feed should show only meetings saved as favorites, the second one should show the meetings the user will be attending and the last one should show the previous meetings the user has joined.
+Previous meetings are shown in the 'Archive' Feed and displayed with grey background.
 
 Each meetings feed should have a header with an arrow on top right of the header to collapse/expand the feed.
 
 Each feed should be scrollable but only 5 meeting cards should be visible at the same time (limited feed height).
 
 These feeds should be dynamic and updated each time the user adds/removes a meeting from the favorites list, join/quit a meeting.
+
+In addition, the filter section which appears on the right side of the page is slightly modified to feature the added ability to filter by type of Feed. A small Drop-down menu is added where the user can select to show ‘Favorites’, ‘Joined Meetings’ or ‘Archive’. If no selection is made all 3 Feeds are displayed.
 
 \subsection{Chat room page}
 
