@@ -5,6 +5,7 @@ ruby '2.6.5'
 
 gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'faker' # Library for generating fake data such as names, addresses, and phone numbers
+gem 'font_awesome5_rails', '~> 0.9.0' # Font-Awesome 5 support
 gem 'jbuilder', '~> 2.7' # Build JSON APIs with ease
 gem 'pg', '>= 0.18', '< 2.0' # Use postgresql as the database for Active Record
 gem 'puma', '~> 4.1' # Use Puma as the app server
