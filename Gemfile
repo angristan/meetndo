@@ -7,6 +7,7 @@ gem 'bootsnap', '>= 1.1.0', require: false # Reduces boot times through caching;
 gem 'bootstrap', '~> 4.3.1' # Bootstrap framework
 gem 'coffee-rails', '~> 4.2' # Use CoffeeScript for .coffee assets and views
 gem 'faker' # Library for generating fake data such as names, addresses, and phone numbers
+gem 'font-awesome-rails', '~> 4.7' # Provides the Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline
 gem 'jbuilder', '~> 2.5' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jquery-rails' # jQuery library
 gem 'pg', '>= 0.18', '< 2.0' # Use postgresql as the database for Active Record
