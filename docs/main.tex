@@ -207,11 +207,9 @@ The meeting cards should show:
     \item Name of the meeting
     \item Type: Food (Lunch/Dinner/Brunch...), Sport (Tennis/Football/Swimming...), Education (Chemistry/Mathematics/Economics...), Entertainment (Theater/Show/Concert...), Art (Painting/Music...), Outdoors (Hiking/Running...)
     \item Location: Precise location with exact address and redirection to google maps when address is clicked
-    \item Time and duration: Meeting time and expected duration of the meeting
-    \item Price: Can be free, estimated or undefined
+    \item Date and Time: Meeting date and time
     \item Current participant number, expected participant number, max participant number: expected and max participant numbers are not mandatory information. 
     Possibility to click on current participant number to display the list of current participants and access to their profile
-    \item Details: Text field with additional details from the meeting organizer, the details should be expandable/collapsible if too long
     \item Ask to Join Button (logged user only): This button will open a new window with a message to send to the meeting organizer for joining the meeting. 
     A default message is proposed to the user, but he can make his own. 
     Join and Cancel Buttons available.
@@ -535,9 +533,9 @@ The information shown in this section are as such:
     \item Duration: approximate duration is stated underneath date and time, if the creator has provided a duration
     \item Location: displayed on the right of time, date and duration, as a mini map (Google Maps API/HTML) with the pinned location, the written location beneath the mini map. 
     By clicking on the map the user is taken to Google Maps with the meeting location pinned
-    \item Price per participant: is displayed underneath as ‘Price: Value’. If no price provided, ‘Price’ is not shown
-    \item Expected participants: as ‘Expected participants: Value’ if provided by creator
+    \item Price per participant: is displayed underneath as ‘Price: Value’. If no price provided, ‘Price’ is not shown (the price is an estimation between Free, '\$', '\$\$' and '\$\$\$')
     \item Current participants: as ‘Current participants: Value’
+    \item Expected participants: as ‘Expected participants: Value’ if provided by creator
     \item Maximum participants: as ‘Maximum participants: Value’ if provided by creator
     \item Organizer of the meeting: is indicated by displaying a small, circular profile picture as well as the name. 
     Users can click on the organizer to be taken to the organizer's profile page
