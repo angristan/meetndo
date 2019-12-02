@@ -19,6 +19,8 @@ gem 'webpacker', '~> 4.0' # Transpile app-like JavaScript
 # gem 'image_processing', '~> 1.2' # Use Active Storage variant
 # gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
 
+gem 'devise' # Flexible authentication solution for Rails with Warden.
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails', '~> 0.3.9' # Use Pry as your rails console
