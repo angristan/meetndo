@@ -1,0 +1,17 @@
+<h1>Meetings</h1>
+
+<% @meetings.each do |meeting| %>
+  <div class="card" style="width: 18rem;">
+    <%#= image_tag meeting.image_filename, class: 'card-img-top', alt: 'meeting main image' %>
+    <div class="card-body">
+      <h5 class="card-title"><%= meeting.name %></h5>
+      <p class="card-text"><%= meeting.description %></p>
+      <%= link_to 'Show', meeting, class: 'btn btn-primary' %>
+      <%= link_to 'Edit', edit_meeting_path(meeting), class: 'btn btn-warning' %>
+      <%= link_to 'Delete', meeting_path(meeting), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
+
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'New Meeting', new_meeting_path, class: 'btn btn-primary' %>
