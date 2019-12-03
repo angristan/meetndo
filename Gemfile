@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+gem 'devise' # Flexible authentication solution for Rails with Warden
 gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'faker' # Library for generating fake data such as names, addresses, and phone numbers
 gem 'font_awesome5_rails', '~> 0.9.0' # Font-Awesome 5 support
@@ -14,12 +15,6 @@ gem 'sass-rails', '>= 6' # Use SCSS for stylesheets
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'webpacker', '~> 4.0' # Transpile app-like JavaScript
-
-# gem 'bcrypt', '~> 3.1.7' # Use Active Model has_secure_password
-# gem 'image_processing', '~> 1.2' # Use Active Storage variant
-# gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
-
-gem 'devise' # Flexible authentication solution for Rails with Warden.
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
