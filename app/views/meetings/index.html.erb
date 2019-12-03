@@ -2,7 +2,7 @@
 
 <% @meetings.each do |meeting| %>
   <div class="card" style="width: 18rem;">
-    <%#= image_tag meeting.image_filename, class: 'card-img-top', alt: 'meeting main image' %>
+    <%= image_tag meeting.cover_picture, class: 'card-img-top', alt: 'meeting main image' %>
     <div class="card-body">
       <h5 class="card-title"><%= meeting.name %></h5>
       <p class="card-text"><%= meeting.description %></p>

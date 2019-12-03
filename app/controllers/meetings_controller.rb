@@ -48,7 +48,7 @@ class MeetingsController < ApplicationController
 
   def meeting_params
     params.require(:meeting).permit(
-      :image_filename,
+      :cover_picture,
       :name,
       :description,
       :location,
