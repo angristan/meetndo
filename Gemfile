@@ -3,8 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
-gem 'devise' # Flexible authentication solution for Rails with Warden
+gem 'ancestry' # Organise ActiveRecord model into a tree structure
 gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching; required in config/boot.rb
+gem 'devise' # Flexible authentication solution for Rails with Warden
 gem 'faker' # Library for generating fake data such as names, addresses, and phone numbers
 gem 'font_awesome5_rails', '~> 0.9.0' # Font-Awesome 5 support
 gem 'jbuilder', '~> 2.7' # Build JSON APIs with ease
