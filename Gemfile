@@ -10,7 +10,7 @@ gem 'faker' # Library for generating fake data such as names, addresses, and pho
 gem 'font_awesome5_rails', '~> 0.9.0' # Font-Awesome 5 support
 gem 'jbuilder', '~> 2.7' # Build JSON APIs with ease
 gem 'pg', '>= 0.18', '< 2.0' # Use postgresql as the database for Active Record
-gem 'puma', '~> 4.1' # Use Puma as the app server
+gem 'puma', '~> 4.3' # Use Puma as the app server
 gem 'rails', '~> 6.0.1' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'sass-rails', '>= 6' # Use SCSS for stylesheets
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster
