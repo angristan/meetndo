@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 2019_12_06_192247) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.bigint "meeting_id", null: false
-    t.index ["meeting_id"], name: "index_meetings_on_meeting_id"
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_meetings_on_category_id"
     t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
@@ -82,6 +82,6 @@ ActiveRecord::Schema.define(version: 2019_12_06_192247) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "meetings", "meetings"
+  add_foreign_key "meetings", "categories"
   add_foreign_key "meetings", "users"
 end

@@ -1,5 +1,6 @@
 class MeetingsController < ApplicationController
   before_action :find_meeting, only: %i(show edit update destroy)
+  before_action :authenticate_user!
 
   def index
     @meetings = Meeting.all.order('created_at DESC')
@@ -10,12 +11,17 @@ class MeetingsController < ApplicationController
   end
 
   def create
+    @categories = Category.all
     @meeting = Meeting.new(meeting_params)
+    @meeting.user_id = current_user.id
+
+    logger.debug @meeting.attributes
 
     if @meeting.save
       flash[:notice] = 'New meeting successfully added!'
-      redirect_to root_path
+      redirect_to @meeting
     else
+      flash[:error] = 'Wrong submission. Try again!'
       render :new
     end
   end
@@ -55,7 +61,8 @@ class MeetingsController < ApplicationController
       :event_date,
       :duration,
       :price,
-      :max_attendees
+      :max_attendees,
+      :category_id
     )
   end
 end

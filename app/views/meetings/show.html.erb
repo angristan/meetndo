@@ -2,5 +2,31 @@
 
 <p><%= @meeting.description %></p>
 
-<%= link_to 'Edit', edit_meeting_path(@meeting), class: 'btn btn-warning' %>
-<%= link_to 'Delete', meeting_path(@meeting), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
+<% if current_user == @meeting.user %>
+
+  <%= link_to 'Edit', edit_meeting_path(@meeting), class: 'btn btn-warning' %>
+  <%= link_to 'Delete', meeting_path(@meeting), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
+
+<% elsif @meeting.date > Time.now %>
+
+    <% if current_user.attending?(@meeting) %>
+      <%= form_with(model: @attend, url: { action: 'create' }) do |form| %>
+        <%= hidden_field_tag :attended_event_id, @meeting.id %>
+        <%= form.submit 'Attend', class: "btn btn-primary" %>
+      <% end %>
+
+      <%#= form_for(current_user.active_attends.build, remote: true) do |f| %>
+<!--        <div><%#= hidden_field_tag :attended_event_id, @meeting.id %></div>-->
+<!--        <p class="lead center"><%#= f.submit "Attend Event", class: "btn btn-primary" %></p>-->
+      <%# end %>
+    <% else %>
+      <%#= form_for(current_user.active_attends.find_by(attended_event_id: @event.id), html: { method: :delete }, remote: true) do |f| %>
+<!--        <p class="lead" style="text-align:center;"><%#= f.submit "Unattend Event", class: "btn btn-primary" %></p>-->
+      <%# end %>
+    <% end %>
+
+<% else %>
+
+  <p>Meeting has ended</p>
+
+<% end %>
