@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about', as: 'about'
 
   resources :meetings
+  resources :attends, only: [:create, :destroy]
 
   root 'meetings#index'
 end

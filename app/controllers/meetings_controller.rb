@@ -15,12 +15,11 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new(meeting_params)
     @meeting.user_id = current_user.id
 
-    logger.debug @meeting.attributes
-
     if @meeting.save
       flash[:notice] = 'New meeting successfully added!'
       redirect_to @meeting
     else
+      logger.debug @meeting.errors.messages
       flash[:error] = 'Wrong submission. Try again!'
       render :new
     end

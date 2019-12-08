@@ -9,7 +9,7 @@ class AttendsController < ApplicationController
   end
 
   def destroy
-    @meeting = Meeting.find(params[:id]).attended_meeting
+    @meeting = Attend.find(params[:id]).attended_meeting
     current_user.unattend(@meeting)
 
     redirect_to @meeting
