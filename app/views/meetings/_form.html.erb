@@ -1,39 +1,98 @@
 <%= form_with(model: @meeting, local: true) do |form| %>
   <div class="form-group">
     <%= form.label :cover_picture %>
-    <%= form.file_field :cover_picture, accept: 'image/png,image/jpeg,image/jpg', class: 'form-control' %>
+    <%= form.file_field :cover_picture,
+                        accept: 'image/png,image/jpeg,image/jpg',
+                        class: "form-control #{'is-invalid' if @meeting.errors.include?(:cover_picture)}",
+                        required: true %>
+    <div class="invalid-feedback">
+      <%= @meeting.errors.full_messages_for(:cover_picture).first if @meeting.errors.include?(:cover_picture) %>
+    </div>
   </div>
 
   <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, class: 'form-control', placeholder: "Give your meeting beautiful name" %>
+    <%= form.text_field :name,
+                        placeholder: "Give your meeting beautiful name",
+                        class: "form-control #{'is-invalid' if @meeting.errors.include?(:name)}",
+                        required: true %>
+    <div class="invalid-feedback">
+      <%= @meeting.errors.full_messages_for(:name).first if @meeting.errors.include?(:name) %>
+    </div>
   </div>
 
   <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area :description, class: 'form-control', placeholder: "Describe as much as possible the aim of your meeting" %>
+    <%= form.text_area :description,
+                       placeholder: "Describe as much as possible the aim of your meeting",
+                       class: "form-control #{'is-invalid' if @meeting.errors.include?(:description)}",
+                       required: true %>
+    <div class="invalid-feedback">
+      <%= @meeting.errors.full_messages_for(:description).first if @meeting.errors.include?(:description) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id,
+                               Category.all,
+                               :id,
+                               :name,
+                               { prompt: 'Select a category'},
+                               { class: "form-control #{'is-invalid' if @meeting.errors.include?(:category)}", required: true } %>
+    <div class="invalid-feedback">
+      <%= @meeting.errors.full_messages_for(:category).first if @meeting.errors.include?(:category) %>
+    </div>
   </div>
 
   <div class="form-group">
     <%= form.label :location %>
-    <%= form.text_field :location, class: 'form-control', placeholder: "Paris, France" %>
+    <%= form.text_field :location,
+                        placeholder: "Paris, France",
+                        class: "form-control #{'is-invalid' if @meeting.errors.include?(:location)}",
+                        required: true %>
+    <div class="invalid-feedback">
+      <%= @meeting.errors.full_messages_for(:location).first if @meeting.errors.include?(:location) %>
+    </div>
   </div>
 
   <div class="form-group">
     <%= form.label :event_date %>
-    <%= form.datetime_field :event_date, min: Date.tomorrow, class: 'form-control' %>
+    <%= form.datetime_field :event_date,
+                            min: Date.tomorrow,
+                            class: "form-control #{'is-invalid' if @meeting.errors.include?(:event_date)}",
+                            required: true %>
+    <div class="invalid-feedback">
+      <%= @meeting.errors.full_messages_for(:event_date).first if @meeting.errors.include?(:event_date) %>
+    </div>
   </div>
 
   <div class="form-group">
     <%= form.label :price %>
-    <%= form.number_field :price, min: 0, step: '0.01', value: 0, class: 'form-control' %>
+    <%= form.number_field :price,
+                          min: 0,
+                          step: '0.01',
+                          value: 0,
+                          class: "form-control #{'is-invalid' if @meeting.errors.include?(:price)}",
+                          required: true %>
     <small class="form-text text-muted">If it is free, set it to zero!</small>
+    <div class="invalid-feedback">
+      <%= @meeting.errors.full_messages_for(:price).first if @meeting.errors.include?(:price) %>
+    </div>
   </div>
 
   <div class="form-group">
     <%= form.label :max_attendees %>
-    <%= form.number_field :max_attendees, min: 0, step: '1', value: 0, class: 'form-control' %>
+    <%= form.number_field :max_attendees,
+                          min: 0,
+                          step: '1',
+                          value: 0,
+                          class: "form-control #{'is-invalid' if @meeting.errors.include?(:max_attendees)}",
+                          required: true %>
     <small class="form-text text-muted">You will be able to change this value later!</small>
+    <div class="invalid-feedback">
+      <%= @meeting.errors.full_messages_for(:max_attendees).first if @meeting.errors.include?(:max_attendees) %>
+    </div>
   </div>
 
   <%= form.submit class: 'btn btn-primary' %>
