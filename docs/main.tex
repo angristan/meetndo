@@ -6,6 +6,8 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{pdfpages}
+
 \graphicspath{ {./pics/} }
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -621,5 +623,29 @@ When a user asks to join a meeting, the organizer receives a message in the conc
 
 \includegraphics[scale=0.3]{pics/mockups/PrivateProfile.png}
 
-\end{document}
+\subsection{Entity Relationship diagram}
 
+\includepdf[scale=0.5]{ERdiagram/ERdiagram.pdf}
+
+Meetings table: 
+This table should contain all the necessary information of a meeting (1 entry per meeting), it’s type is an Integer value referring to the types table which contains all the different types of meetings. The current participant number can be computed when requested so it doesn’t need to be stored in this table. The location entry is a string referring to the Google Places API ID of the selected place.
+
+Users table:
+The users table should contain all the information about users (1 entry per user). The location entry is a string referring to the Google Places API ID of the selected city. The privacy entry is a binary value describing the user’s privacy settings: some of the user personal information can be set as either Public or Private like the name/first name, gender, date of birth, email, location, and previous meetings so 6 information in total. For example if every information is set as public the binary should be set to 0x000000 and if 2 of the 6 information are set to private the privacy binary should be set to 0x001010 for example.
+
+Messages table:
+This table should contain all relevant information of sent messages within chat rooms (1 entry/message sent). The sender and chatroom values are Integer referring to the sender’s user ID and to the chatroom’s ID.
+
+Chatrooms table:
+This table contains all chat rooms (1 entry/chatroom). The only information that it stores is if the chatroom is a group chat or a private chat (between 2 users only).
+
+Relations table:
+The relations table contains all different relations between a user and a meeting. There are 4 different types of relation: 0 -> Organizer, 1 -> Participant, 2 -> Favorites (The meeting is in the user’s favorites meetings), 3 -> Pending (User made a request to join the meeting but has no confirmation yet). This table is static meaning that it will not change unless new types of relations are added in future versions of the website.
+
+Types table:
+The types table contains the name of all different meeting types. The main categories: Food, Sport, Education, Entertainment, Art, Outdoors, Others having a parent value equal to 0 and the sub-categories such as Dinner, Lunch, Swimming, Football, Others that will have a parent value set to the related main category’s ID. This table is also static and doesn’t change unless some new categories are added, or the table is replaced in a future version of the website.
+
+Join tables:
+'users\_meetings' and 'users\_chatrooms' tables describe all links between users and meetings and the ones between users and chatrooms. The users\_meetings table additional information for each relation between a user and a table is the type of relation between both entities. The additional information in the users\_chatrooms table is a Boolean stating if the user is the administrator of the chat or not (the organizer of a meeting chat is the administrator, he can decide whether accepting or denying a request to join the meeting from a user from the chatroom).
+
+\end{document}
