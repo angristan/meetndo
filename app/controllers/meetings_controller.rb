@@ -19,7 +19,6 @@ class MeetingsController < ApplicationController
       flash[:notice] = 'New meeting successfully added!'
       redirect_to @meeting
     else
-      logger.debug @meeting.errors.messages
       flash[:error] = 'Wrong submission. Try again!'
       render :new
     end
