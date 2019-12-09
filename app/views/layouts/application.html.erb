@@ -14,11 +14,10 @@
 
   <body>
     <%= render "shared/navbar" %>
-    <%= render 'shared/alerts' %>
 
     <div class="row container-fluid" style="height: -webkit-fill-available;">
       <div class='col sidebar-fixed'><%= render 'shared/sidebar' %></div>
-      <div class='col'><%= yield %></div>
+      <div class='col'><%= render 'shared/alerts' %><%= yield %></div>
     </div>
   </body>
 </html>
