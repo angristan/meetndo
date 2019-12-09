@@ -1,0 +1,30 @@
+.field_with_errors {
+    @extend .is-invalid;
+}
+
+[att^=h] {
+    margin-top: 1rem; 
+    margin-bottom: 1rem;
+}
+
+.navbar-fixed {
+    position: sticky; 
+    top: 0; 
+    z-index: 1071;
+}
+
+.sidebar-fixed {
+    position: sticky; 
+    top: 10rem; 
+    z-index: 1000; 
+    height: -webkit-fill-available; 
+    max-width: max-content; 
+    min-width: max-content;
+}
+
+.meeting-card {
+    width: 100%; 
+    margin-top: 0.5rem; 
+    margin-bottom: 0.5rem; 
+    border-radius: 0.25rem;
+}

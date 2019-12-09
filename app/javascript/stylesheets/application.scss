@@ -2,7 +2,4 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootswatch/dist/lux/bootswatch';
 @import '~@fortawesome/fontawesome-free';
-
-.field_with_errors {
-  @extend .is-invalid;
-}
+@import 'custom.scss';
