@@ -8,7 +8,7 @@ CREATE TABLE "users" (
   "date_of_birth" date,
   "email" varchar,
   "password" varchar,
-  "location" int,
+  "location" string,
   "privacy" binary
 );
 
@@ -18,13 +18,11 @@ CREATE TABLE "meetings" (
   "name" varchar,
   "type" int,
   "description" varchar,
-  "location" int,
+  "location" string,
   "datetime" datetime,
   "duration" int,
-  "price" int,
-  "current_part" int,
+  "price" decimal,
   "max_part" int,
-  "expected_part" int,
   "chatroom" int,
   "archived" boolean
 );
