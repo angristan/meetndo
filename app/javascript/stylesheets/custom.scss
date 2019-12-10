@@ -17,10 +17,30 @@ h1, h2, h3 {
     position: sticky; 
     top: 10rem; 
     z-index: 1000; 
+    background-color: white;
     height: -webkit-fill-available; 
     max-width: max-content; 
     min-width: max-content;
 }
+
+@media screen and (max-width: 700px) {
+    .container-fluid {
+        margin-left: unset;
+        margin-right: unset;
+        display: block;
+        text-align: center;
+    }
+    .sidebar-fixed {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        max-width: unset;
+        position: unset;
+        top: unset;
+    }
+    .page-content {
+        padding-top: 1rem;
+    }
+  }
 
 .meeting-card {
     width: 100%; 
