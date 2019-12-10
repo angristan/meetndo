@@ -23,6 +23,10 @@ h1, h2, h3 {
     min-width: max-content;
 }
 
+.page-content {
+    padding-top: 1.5rem;
+}
+
 @media screen and (max-width: 700px) {
     .container-fluid {
         margin-left: unset;
@@ -38,9 +42,9 @@ h1, h2, h3 {
         top: unset;
     }
     .page-content {
-        padding-top: 1rem;
+        padding-top: unset;
     }
-  }
+}
 
 .meeting-card {
     width: 100%; 
