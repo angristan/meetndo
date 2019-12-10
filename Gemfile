@@ -18,7 +18,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows doe
 gem 'webpacker', '~> 4.0' # Transpile app-like JavaScript
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug' # Step-by-step debugging and stack navigation in Pry
   gem 'pry-rails', '~> 0.3.9' # Use Pry as your rails console
   gem 'rubocop-airbnb', '>= 3.0.1' # Include Rubocop configuration used at Airbnb and a few custom rules
 end
