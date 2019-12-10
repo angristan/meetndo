@@ -29,7 +29,7 @@ class Meeting < ApplicationRecord
 
   def event_date_is_valid_datetime
     if (begin
-          DateTime.parse(event_date)
+          DateTime.parse(event_date.to_s)
         rescue
           ArgumentError
         end) == ArgumentError
