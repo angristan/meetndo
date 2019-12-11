@@ -16,6 +16,7 @@ class MeetingsController < ApplicationController
     @meeting.user_id = current_user.id
 
     if @meeting.save
+      current_user.attend(@meeting)
       flash[:notice] = 'New meeting successfully added!'
       redirect_to @meeting
     else

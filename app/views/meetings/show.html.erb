@@ -53,3 +53,16 @@
   <p>Meeting has ended</p>
 
 <% end %>
+
+<h4 class="mt-4">Attendees:</h4>
+<ul>
+  <% @meeting.attendees.each do |user| %>
+    <li style="list-style: none;">
+      <%= gravatar_for user, size: '40' %>
+      <%= link_to user.name, profile_path(user) %>
+      <% if @meeting.owner == user %>
+        <small>(owner)</small>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
