@@ -3,8 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+gem 'coderay'
+
 gem 'ancestry' # Organise ActiveRecord model into a tree structure
 gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching; required in config/boot.rb
+gem 'coderay' # Fast and easy syntax highlighting for selected languages, written in Ruby
 gem 'devise' # Flexible authentication solution for Rails with Warden
 gem 'faker' # Library for generating fake data such as names, addresses, and phone numbers
 gem 'font_awesome5_rails', '~> 0.9.0' # Font-Awesome 5 support
@@ -12,6 +15,7 @@ gem 'jbuilder', '~> 2.7' # Build JSON APIs with ease
 gem 'pg', '>= 0.18', '< 2.0' # Use postgresql as the database for Active Record
 gem 'puma', '~> 4.3' # Use Puma as the app server
 gem 'rails', '~> 6.0.1' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'redcarpet' # Ruby library for Markdown processing
 gem 'sass-rails', '>= 6' # Use SCSS for stylesheets
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

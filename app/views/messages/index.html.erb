@@ -1,0 +1,36 @@
+<h4>Message <%= @conversation.recipient.name %></h4>
+
+<% if @over_ten %>
+  <%= link_to "Show previous", '?m=all', class: 'btn btn-link' %>
+<% end %>
+
+<section id="messages" class="mb-4">
+  <% @messages.each do |message| %>
+    <% if message.body %>
+      <% user = User.find(message.user_id) %>
+      <article class="">
+        <div class="">
+          <div class="pr-2" style="display: inline-block; position: relative; top: 10px;">
+            <%= gravatar_for user %>
+          </div>
+          <small style="display: inline-block">
+            <h6><%= user.name  %></h6> <%= message.message_time %>
+          </small>
+          <div class="pt-4" style="display: block">
+            <%= markdown(message.body) %>
+          </div>
+        </div>
+      </article>
+    <% end %>
+  <% end %>
+</section>
+
+<%= form_for([@conversation, @message], remote: true) do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, placeholder: "Your message...", class: "form-control" %>
+  </div>
+  <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+  <div style="text-align: right">
+    <%= f.submit "Send message", class: "btn btn-primary mt-3" %>
+  </div>
+<% end %>

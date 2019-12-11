@@ -1,0 +1,13 @@
+<h1><%= @user.name %>'s profile</h1>
+<h2>User id: <%= @user.id %></h2>
+
+<% if user_signed_in? && current_user.id != @user.id %>
+  <%= link_to "Message #{@user.name}",
+              conversations_path(sender_id: current_user.id, recipient_id: @user.id),
+              method: 'post',
+              class: 'btn btn-link' %>
+<% elsif user_signed_in? && current_user.id == @user.id %>
+  <%= link_to "Conversations", conversations_path, class: 'btn btn-link' %>
+<% else %>
+  <%= link_to "Sign up to message #{@user.name}", new_user_registration_path %>
+<% end %>

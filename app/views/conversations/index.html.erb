@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-3">
+    <h3 class="col-3">All Users</h3>
+    <ul>
+    <% @users.each do |user| %>
+      <% if user.id != current_user.id %>
+        <li>
+        <%= link_to "Messages #{user.name}", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post' %>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class="col-7">
+    <h3 class="col-3">Conversations</h3>
+    <% @conversations.each do |conversation| %>
+      <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+        <% if conversation.sender_id == current_user.id %>
+          <% recipient = User.find(conversation.recipient_id) %>
+        <% else %>
+          <% recipient = User.find(conversation.recipient_id)  %>
+        <% end %>
+        <% unless current_user.id == recipient.id %>
+          <div class="row">
+            <div class="col">
+              <div style="display: inline-block; position: relative; top: 10px;">
+                <%= gravatar_for recipient %>
+              </div>
+              <div style="display: inline-block">
+                <%= link_to recipient.name, conversation_messages_path(conversation) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
