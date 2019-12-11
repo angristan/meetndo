@@ -4,8 +4,14 @@ class User < ApplicationRecord
   has_many :meetings
   has_many :active_attends, class_name: 'Attend', foreign_key: 'attendee_id', dependent: :destroy
   has_many :attending, through: :active_attends, source: :attended_meeting
+  has_many :active_favorites, class_name: 'Favorite', foreign_key: 'lover_id', dependent: :destroy
+  has_many :favorite_meetings, through: :active_favorites, source: :favorite_meeting
 
-  # validates :email, length: { maximum: 254 }, email: true, uniqueness: { case_sensitive: false }
+  validates :email,
+            presence: true,
+            email: true,
+            length: { maximum: 254 },
+            uniqueness: { case_sensitive: false }
 
   def attend(meeting)
     active_attends.create(attended_meeting_id: meeting.id)
@@ -25,5 +31,17 @@ class User < ApplicationRecord
 
   def past_meetings
     meetings.where('date < ?', Time.now)
+  end
+
+  def add_to_favorites(meeting)
+    active_favorites.create(favorite_meeting_id: meeting.id)
+  end
+
+  def remove_from_favorites(meeting)
+    active_favorites.find_by(favorite_meeting_id: meeting.id).destroy
+  end
+
+  def has_favorite?(meeting)
+    favoring.include?(meeting)
   end
 end

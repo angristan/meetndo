@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :meetings
   resources :attends, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy]
 
   root 'meetings#index'
 end

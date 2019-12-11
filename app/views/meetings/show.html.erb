@@ -31,6 +31,21 @@
 
     <% end %>
 
+    <% if current_user.has_favorite?(@meeting) %>
+
+      <%= form_for(current_user.active_favorites.find_by(favorite_meeting_id: @meeting.id), html: { method: :delete }) do |form| %>
+        <%= form.submit 'Remove from favorites', class: 'btn btn-outline-primary' %>
+      <% end %>
+
+    <% else %>
+
+      <%= form_for(current_user.active_favorites.build) do |form| %>
+        <%= hidden_field_tag :favorite_meeting_id, @meeting.id %>
+        <%= form.submit 'Add to favorites', class: 'btn btn-outline-primary' %>
+      <% end %>
+
+    <% end %>
+
   <% end %>
 
 <% else %>

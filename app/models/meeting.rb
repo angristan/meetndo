@@ -7,6 +7,11 @@ class Meeting < ApplicationRecord
            foreign_key: 'attended_meeting_id',
            dependent: :destroy
   has_many :attendees, through: :passive_attends, source: :attendee
+  has_many :passive_favorites,
+           class_name: 'Favorite',
+           foreign_key: 'favorite_meeting_id',
+           dependent: :destroy
+  has_many :lovers, through: :passive_favorites, source: :lover
 
   has_one_attached :cover_picture
 
