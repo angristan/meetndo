@@ -7,12 +7,6 @@ class User < ApplicationRecord
   has_many :active_favorites, class_name: 'Favorite', foreign_key: 'lover_id', dependent: :destroy
   has_many :favorite_meetings, through: :active_favorites, source: :favorite_meeting
 
-  validates :email,
-            presence: true,
-            email: true,
-            length: { maximum: 254 },
-            uniqueness: { case_sensitive: false }
-
   def attend(meeting)
     active_attends.create(attended_meeting_id: meeting.id)
   end
