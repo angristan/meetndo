@@ -36,6 +36,6 @@ class User < ApplicationRecord
   end
 
   def has_favorite?(meeting)
-    favoring.include?(meeting)
+    favorite_meetings.include?(meeting)
   end
 end
