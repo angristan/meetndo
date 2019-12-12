@@ -25,6 +25,7 @@ h1, h2, h3 {
 
 .page-content {
     padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 @media screen and (max-width: 700px) {
@@ -92,11 +93,14 @@ h1, h2, h3 {
 }
 
 .meeting-infos {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-left-style: groove;
+    border-left-width: thin;
 }
 
 .meeting-image-buttons {
+    margin-right: 1rem;
     max-width: max-content;
     max-height: max-content;
 }
