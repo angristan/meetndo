@@ -49,6 +49,11 @@ class MeetingsController < ApplicationController
     redirect_to meetings_path
   end
 
+  def my_meetings
+    @upcoming_meetings = current_user.active_attends
+    @favorite_meetings = current_user.favorite_meetings
+  end
+
   private
 
   def find_meeting

@@ -3,7 +3,7 @@
     <%= link_to 'Home', root_path, class: 'nav-link' %>
   </li>
   <li class="nav-item">
-    <%= link_to 'My Meetings', root_path, class: 'nav-link' %>
+    <%= link_to 'My Meetings', my_meetings_path, class: 'nav-link' %>
   </li>
   <% unless current_user.blank? %>
     <li class="nav-item">
