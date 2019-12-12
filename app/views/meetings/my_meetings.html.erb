@@ -48,7 +48,7 @@
               <p class="card-text"><%= meeting.location %></p>
             </div>
             <div class="col card-attendees">
-              <h5 class="card-title"><%= meeting.max_attendees %>/<%= meeting.max_attendees %></h5>
+              <h5 class="card-title"><%= meeting.attendees.count %>/<%= meeting.max_attendees %></h5>
             </div>
           </div>
           <div class="col card-buttons">

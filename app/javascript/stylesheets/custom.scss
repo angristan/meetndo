@@ -1,3 +1,7 @@
+body {
+    min-width: 360px;
+}
+
 .field_with_errors {
     @extend .is-invalid;
 }
@@ -13,6 +17,7 @@ h1, h2, h3 {
     z-index: 1071;
 }
 
+// --- Horizontal mode: screen width >700px --- //
 .sidebar-fixed {
     position: sticky;
     top: 10rem;
@@ -28,6 +33,70 @@ h1, h2, h3 {
     padding-bottom: 1.5rem;
 }
 
+.custom-btn {
+    width: 211px;
+    height: 52px;
+}
+
+// Meeting feed
+.meeting-card {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+.card-image {
+    max-height: 250px;
+    max-width: 250px;
+    min-height: 250px;
+    min-width: 250px;
+    align-items: center;
+    display: flex;
+}
+.card-infos {
+    display: contents;
+}
+.card-attendees {
+    align-self: center;
+    text-align: right;
+    max-width: min-content;
+}
+.card-buttons {
+    align-self: center;
+    text-align: center;
+    max-width: max-content;
+}
+
+// Meeting information page
+.meeting-image-buttons {
+    margin-right: 1rem;
+    max-width: max-content;
+    max-height: max-content;
+}
+.meeting-image {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.meeting-buttons {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.meeting-infos {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-left-style: groove;
+    border-left-width: thin;
+}
+.meeting-attendees {
+    padding-top: 3rem;
+}
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+// --- Vertical mode: screen width <700px --- //
 @media screen and (max-width: 700px) {
     .container-fluid {
         margin-left: unset;
@@ -45,74 +114,18 @@ h1, h2, h3 {
     .page-content {
         padding-top: unset;
     }
-}
-
-.meeting-card {
-    width: 100%;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 0.25rem;
-}
-
-.card-image {
-    max-height: 250px;
-    max-width: 250px;
-    min-height: 250px;
-    min-width: 250px;
-    align-items: center;
-    display: flex;
-}
-
-.card-infos {
-    display: contents;
-}
-
-.card-attendees {
-    align-self: center;
-    text-align: right;
-    max-width: min-content;
-}
-
-.card-buttons {
-    align-self: center;
-    text-align: center;
-    max-width: max-content;
-}
-
-.meeting-image {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.meeting-buttons {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-align: center;
-}
-
-.custom-btn {
-    width: 211px;
-    height: 52px;
-}
-
-.meeting-infos {
-    margin-top: 1rem;
-    margin-left: 1rem;
-    border-left-style: groove;
-    border-left-width: thin;
-}
-
-.meeting-image-buttons {
-    margin-right: 1rem;
-    max-width: max-content;
-    max-height: max-content;
-}
-
-.meeting-attendees {
-    padding-top: 3rem;
-}
-/* Set the size of the div element that contains the map */
-#map {
-height: 400px;  /* The height is 400 pixels */
-width: 100%;  /* The width is the width of the web page */
+    .card-body {
+        display: contents;
+    }
+    .card-image {
+        align-self: center;
+    }
+    .card-general {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .card-buttons {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 }
