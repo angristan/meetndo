@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_111133) do
   create_table "meetings", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "location"
+    t.string "location"
     t.datetime "event_date"
     t.decimal "price"
     t.integer "max_attendees"

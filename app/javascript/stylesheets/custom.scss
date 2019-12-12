@@ -3,23 +3,23 @@
 }
 
 h1, h2, h3 {
-    margin-top: 1rem; 
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 .navbar-fixed {
-    position: sticky; 
-    top: 0; 
+    position: sticky;
+    top: 0;
     z-index: 1071;
 }
 
 .sidebar-fixed {
-    position: sticky; 
-    top: 10rem; 
-    z-index: 1000; 
+    position: sticky;
+    top: 10rem;
+    z-index: 1000;
     background-color: white;
-    height: -webkit-fill-available; 
-    max-width: max-content; 
+    height: -webkit-fill-available;
+    max-width: max-content;
     min-width: max-content;
 }
 
@@ -47,9 +47,9 @@ h1, h2, h3 {
 }
 
 .meeting-card {
-    width: 100%; 
-    margin-top: 0.5rem; 
-    margin-bottom: 0.5rem; 
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     border-radius: 0.25rem;
 }
 
@@ -73,4 +73,10 @@ h1, h2, h3 {
     align-self: center;
     text-align: center;
     max-width: max-content;
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+height: 400px;  /* The height is 400 pixels */
+width: 100%;  /* The width is the width of the web page */
 }
