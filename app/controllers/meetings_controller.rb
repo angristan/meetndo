@@ -25,7 +25,11 @@ class MeetingsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    results = Geocoder.search(@meeting.location)
+    @lat = results.first.coordinates[0].to_s
+    @lng = results.first.coordinates[1].to_s
+  end
 
   def edit; end
 

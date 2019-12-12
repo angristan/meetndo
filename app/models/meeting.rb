@@ -20,7 +20,7 @@ class Meeting < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 128 }
   validates :description, presence: true
-  validates :location, presence: true, numericality: { only_integer: true }
+  validates :location, presence: true
   validates :price,
             presence: true,
             format: { with: /\A\d+(?:\.\d{0,2})?\z/ },
