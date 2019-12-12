@@ -1,0 +1,62 @@
+<h1>My meetings</h1>
+<div class="row">
+  <div class="col-sm-12 col-md-6">
+    <h3>Upcoming meetings</h3>
+    <%# @upcoming_meetings.each do |meeting| %>
+
+<!--      <div class="card meeting-card">-->
+<!--        <div class="row card-body">-->
+<!--          <div class="col card-image">-->
+            <%#= image_tag meeting.cover_picture, class: 'card-img-top', alt: 'meeting main image' %>
+<!--          </div>-->
+<!--          <div class="col card-infos">-->
+<!--            <div class="col card-general">-->
+<!--              <h5 class="card-title"><%#= meeting.name %></h5>-->
+<!--              <p class="card-text"><%#= meeting.category.name %></p>-->
+<!--              <p class="card-text">On <%#= meeting.event_date.strftime('%a %F') %>-->
+<!--                at <%#= meeting.event_date.strftime('%I %M %p') %></p>-->
+<!--              <p class="card-text"><%#= meeting.location %></p>-->
+<!--            </div>-->
+<!--            <div class="col card-attendees">-->
+<!--              <h5 class="card-title"><%#= meeting.max_attendees %>/<%#= meeting.max_attendees %></h5>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col card-buttons">-->
+            <%#= link_to 'Show', meeting, class: 'btn btn-primary' %>
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+    <%# end %>
+    <p>Coming soon...</p>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <h3>Favorite meetings</h3>
+    <% @favorite_meetings.each do |meeting| %>
+
+      <div class="card meeting-card">
+        <div class="row card-body">
+          <div class="col card-image">
+            <%= image_tag meeting.cover_picture, class: 'card-img-top', alt: 'meeting main image' %>
+          </div>
+          <div class="col card-infos">
+            <div class="col card-general">
+              <h5 class="card-title"><%= meeting.name %></h5>
+              <p class="card-text"><%= meeting.category.name %></p>
+              <p class="card-text">On <%= meeting.event_date.strftime('%a %F') %>
+                at <%= meeting.event_date.strftime('%I %M %p') %></p>
+              <p class="card-text"><%= meeting.location %></p>
+            </div>
+            <div class="col card-attendees">
+              <h5 class="card-title"><%= meeting.max_attendees %>/<%= meeting.max_attendees %></h5>
+            </div>
+          </div>
+          <div class="col card-buttons">
+            <%= link_to 'Show', meeting, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
