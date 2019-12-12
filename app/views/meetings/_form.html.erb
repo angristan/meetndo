@@ -4,7 +4,7 @@
     <%= form.file_field :cover_picture,
                         accept: 'image/png,image/jpeg,image/jpg',
                         class: "form-control #{'is-invalid' if @meeting.errors.include?(:cover_picture)}",
-                        required: true %>
+                        required: false %>
     <div class="invalid-feedback">
       <%= @meeting.errors.full_messages_for(:cover_picture).first if @meeting.errors.include?(:cover_picture) %>
     </div>
