@@ -83,9 +83,10 @@ h1, h2, h3 {
 .meeting-buttons {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    text-align: center;
 }
 
-.meeting-buttons input {
+.custom-btn {
     width: 211px;
     height: 52px;
 }
