@@ -75,6 +75,34 @@ h1, h2, h3 {
     max-width: max-content;
 }
 
+.meeting-image {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.meeting-buttons {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.meeting-buttons input {
+    width: 211px;
+    height: 52px;
+}
+
+.meeting-infos {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.meeting-image-buttons {
+    max-width: max-content;
+    max-height: max-content;
+}
+
+.meeting-attendees {
+    padding-top: 3rem;
+}
 /* Set the size of the div element that contains the map */
 #map {
 height: 400px;  /* The height is 400 pixels */
