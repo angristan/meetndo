@@ -1,74 +1,83 @@
-<%= image_tag @meeting.cover_picture, width: 500 %>
+<div class="row">
+  <div class="col meeting-image-buttons">
+    <div class="row meeting-image">
+      <%= image_tag @meeting.cover_picture, width: 500 %>
+    </div>
+    <div class="row meeting-buttons">
+      <% if current_user.id == @meeting.user_id %>
 
-<h1><%= @meeting.name %></h1>
+        <%= link_to 'Edit', edit_meeting_path(@meeting), class: 'btn btn-warning' %>
+        <%= link_to 'Delete', meeting_path(@meeting), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
 
-<h2><%= @meeting.category.name %></h2>
-<p>On <%= @meeting.event_date.strftime('%a %F') %> at <%= @meeting.event_date.strftime('%I %M %p') %></p>
-<p><%= @meeting.location %></p>
-
-<h3>Description</h3>
-<p><%= @meeting.description %></p>
-
-<h5 class="card-title"><%= @meeting.max_attendees %>/<%= @meeting.max_attendees %></h5>
-
-<% if current_user.id == @meeting.user_id %>
-
-  <%= link_to 'Edit', edit_meeting_path(@meeting), class: 'btn btn-warning' %>
-  <%= link_to 'Delete', meeting_path(@meeting), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
-
-<% end %>
-
-<% if @meeting.event_date > Time.now %>
-
-  <% if current_user.id != @meeting.user_id %>
-
-    <% if current_user.attending?(@meeting) %>
-
-      <%= form_for(current_user.active_attends.find_by(attended_meeting_id: @meeting.id), html: { method: :delete }) do |form| %>
-        <%= form.submit 'Unattend', class: 'btn btn-primary' %>
       <% end %>
 
-    <% else %>
+      <% if @meeting.event_date > Time.now %>
 
-      <%= form_for(current_user.active_attends.build) do |form| %>
-        <%= hidden_field_tag :attended_meeting_id, @meeting.id %>
-        <%= form.submit 'Attend', class: 'btn btn-primary' %>
+        <% if current_user.id != @meeting.user_id %>
+
+          <% if current_user.attending?(@meeting) %>
+
+            <%= form_for(current_user.active_attends.find_by(attended_meeting_id: @meeting.id), html: { method: :delete }) do |form| %>
+              <%= form.submit 'Unattend', class: 'btn btn-primary' %>
+            <% end %>
+
+          <% else %>
+
+            <%= form_for(current_user.active_attends.build) do |form| %>
+              <%= hidden_field_tag :attended_meeting_id, @meeting.id %>
+              <%= form.submit 'Attend', class: 'btn btn-primary' %>
+            <% end %>
+
+          <% end %>
+
+          <% if current_user.has_favorite?(@meeting) %>
+
+            <%= form_for(current_user.active_favorites.find_by(favorite_meeting_id: @meeting.id), html: { method: :delete }) do |form| %>
+              <%= form.submit 'Remove from favorites', class: 'btn btn-outline-primary' %>
+            <% end %>
+
+          <% else %>
+
+            <%= form_for(current_user.active_favorites.build) do |form| %>
+              <%= hidden_field_tag :favorite_meeting_id, @meeting.id %>
+              <%= form.submit 'Add to favorites', class: 'btn btn-outline-primary' %>
+            <% end %>
+
+          <% end %>
+
+        <% end %>
+
+      <% else %>
+
+        <p>Meeting has ended</p>
+
       <% end %>
-
-    <% end %>
-
-    <% if current_user.has_favorite?(@meeting) %>
-
-      <%= form_for(current_user.active_favorites.find_by(favorite_meeting_id: @meeting.id), html: { method: :delete }) do |form| %>
-        <%= form.submit 'Remove from favorites', class: 'btn btn-outline-primary' %>
-      <% end %>
-
-    <% else %>
-
-      <%= form_for(current_user.active_favorites.build) do |form| %>
-        <%= hidden_field_tag :favorite_meeting_id, @meeting.id %>
-        <%= form.submit 'Add to favorites', class: 'btn btn-outline-primary' %>
-      <% end %>
-
-    <% end %>
-
-  <% end %>
-
-<% else %>
-
-  <p>Meeting has ended</p>
-
-<% end %>
-
-<h4 class="mt-4">Attendees:</h4>
-<ul>
-  <% @meeting.attendees.each do |user| %>
-    <li style="list-style: none;">
-      <%= gravatar_for user, size: '40' %>
-      <%= link_to user.name, profile_path(user) %>
-      <% if @meeting.owner == user %>
-        <small>(owner)</small>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+    </div>
+  </div>
+  <div class="col meeting-infos">
+    <div class="col meeting-desc">
+      <h1><%= @meeting.name %></h1>
+      <h2><%= @meeting.category.name %></h2>
+      <p>On <%= @meeting.event_date.strftime('%a %F') %> at <%= @meeting.event_date.strftime('%I %M %p') %></p>
+      <p><%= @meeting.location %></p>
+      <h3>Description</h3>
+      <p><%= @meeting.description %></p>
+      <h3>Participants</h3>
+      <p><%= @meeting.max_attendees %>/<%= @meeting.max_attendees %></p>
+    </div>
+    <div class="col meeting-attendees">
+      <h4 class="mt-4">Attendees:</h4>
+      <ul>
+        <% @meeting.attendees.each do |user| %>
+          <li style="list-style: none;">
+            <%= gravatar_for user, size: '40' %>
+            <%= link_to user.name, profile_path(user) %>
+            <% if @meeting.owner == user %>
+              <small>(owner)</small>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
