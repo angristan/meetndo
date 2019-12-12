@@ -104,6 +104,7 @@ h1, h2, h3 {
         display: block;
         text-align: center;
     }
+
     .sidebar-fixed {
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -111,9 +112,12 @@ h1, h2, h3 {
         position: unset;
         top: unset;
     }
+
     .page-content {
         padding-top: unset;
     }
+
+    // Meeting feed
     .card-body {
         display: contents;
     }
@@ -127,5 +131,18 @@ h1, h2, h3 {
     .card-buttons {
         padding-top: 1rem;
         padding-bottom: 1rem;
+    }
+
+    //Meeting information page
+    .meeting-image-buttons {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .meeting-infos {
+        margin-left: unset;
+        border-left-style: unset;
+    }
+    .meeting-buttons .custom-btn {
+        width: inherit;
     }
 }
