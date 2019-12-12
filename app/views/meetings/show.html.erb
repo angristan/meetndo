@@ -25,7 +25,8 @@
   * The callback parameter executes the initMap() function
   -->
   <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArgY8ioNfFsKrLv_b6iIB2nrTsMsQ2oHA&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google_maps_api_key) %>
+&callback=initMap">
 </script>
 
 <h3>Description</h3>
