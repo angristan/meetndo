@@ -87,7 +87,7 @@
       <h3>Description</h3>
       <p><%= @meeting.description %></p>
       <h3>Participants</h3>
-      <p><%= @meeting.max_attendees %>/<%= @meeting.max_attendees %></p>
+      <p><%= @meeting.attendees.count %>/<%= @meeting.max_attendees %></p>
     </div>
     <div class="col meeting-attendees">
       <h4 class="mt-4">Attendees:</h4>
