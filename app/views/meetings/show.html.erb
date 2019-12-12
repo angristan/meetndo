@@ -5,10 +5,12 @@
     </div>
     <div class="row meeting-buttons">
       <% if current_user.id == @meeting.user_id %>
-
-        <%= link_to 'Edit', edit_meeting_path(@meeting), class: 'btn btn-warning' %>
-        <%= link_to 'Delete', meeting_path(@meeting), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
-
+        <div class="col">
+          <%= link_to 'Edit', edit_meeting_path(@meeting), class: 'custom-btn btn btn-warning' %>
+        </div>
+        <div class="col">
+          <%= link_to 'Delete', meeting_path(@meeting), method: :delete, class: 'custom-btn btn btn-danger', data: { confirm: "Are you sure?" } %>
+        </div>
       <% end %>
 
       <% if @meeting.event_date > Time.now %>
@@ -16,33 +18,33 @@
         <% if current_user.id != @meeting.user_id %>
 
           <% if current_user.attending?(@meeting) %>
-
-            <%= form_for(current_user.active_attends.find_by(attended_meeting_id: @meeting.id), html: { method: :delete }) do |form| %>
-              <%= form.submit 'Unattend', class: 'btn btn-primary' %>
-            <% end %>
-
+            <div class="col">
+              <%= form_for(current_user.active_attends.find_by(attended_meeting_id: @meeting.id), html: { method: :delete }) do |form| %>
+                <%= form.submit 'Unattend', class: 'custom-btn btn btn-primary' %>
+              <% end %>
+            </div>
           <% else %>
-
-            <%= form_for(current_user.active_attends.build) do |form| %>
-              <%= hidden_field_tag :attended_meeting_id, @meeting.id %>
-              <%= form.submit 'Attend', class: 'btn btn-primary' %>
-            <% end %>
-
+            <div class="col">
+              <%= form_for(current_user.active_attends.build) do |form| %>
+                <%= hidden_field_tag :attended_meeting_id, @meeting.id %>
+                <%= form.submit 'Attend', class: ' custom-btn btn btn-primary' %>
+              <% end %>
+            </div>
           <% end %>
 
           <% if current_user.has_favorite?(@meeting) %>
-
-            <%= form_for(current_user.active_favorites.find_by(favorite_meeting_id: @meeting.id), html: { method: :delete }) do |form| %>
-              <%= form.submit 'Remove from favorites', class: 'btn btn-outline-primary' %>
-            <% end %>
-
+            <div class="col">
+              <%= form_for(current_user.active_favorites.find_by(favorite_meeting_id: @meeting.id), html: { method: :delete }) do |form| %>
+                <%= form.submit 'Remove from favorites', class: 'custom-btn btn btn-outline-primary' %>
+              <% end %>
+            </div>
           <% else %>
-
-            <%= form_for(current_user.active_favorites.build) do |form| %>
-              <%= hidden_field_tag :favorite_meeting_id, @meeting.id %>
-              <%= form.submit 'Add to favorites', class: 'btn btn-outline-primary' %>
-            <% end %>
-
+            <div class="col">
+              <%= form_for(current_user.active_favorites.build) do |form| %>
+                <%= hidden_field_tag :favorite_meeting_id, @meeting.id %>
+                <%= form.submit 'Add to favorites', class: 'custom-btn btn btn-outline-primary' %>
+              <% end %>
+            </div>
           <% end %>
 
         <% end %>
