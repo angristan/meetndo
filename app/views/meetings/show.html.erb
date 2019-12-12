@@ -2,8 +2,14 @@
 
 <h1><%= @meeting.name %></h1>
 
+<h2><%= @meeting.category.name %></h2>
+<p>On <%= @meeting.event_date.strftime('%a %F') %> at <%= @meeting.event_date.strftime('%I %M %p') %></p>
+<p><%= @meeting.location %></p>
+
 <h3>Description</h3>
 <p><%= @meeting.description %></p>
+
+<h5 class="card-title"><%= @meeting.max_attendees %>/<%= @meeting.max_attendees %></h5>
 
 <% if current_user.id == @meeting.user_id %>
 
