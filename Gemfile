@@ -21,6 +21,7 @@ gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application fast
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'webpacker', '~> 4.0' # Transpile app-like JavaScript
 gem 'geocoder'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'pry-byebug' # Step-by-step debugging and stack navigation in Pry
