@@ -1,22 +1,22 @@
 <ul class="nav nav-pills flex-column">
-  <li class="nav-item">
+  <li>
     <%= link_to 'Home', root_path, class: 'nav-link' %>
   </li>
-  <li class="nav-item">
+  <li>
     <%= link_to 'My Meetings', my_meetings_path, class: 'nav-link' %>
   </li>
   <% unless current_user.blank? %>
-    <li class="nav-item">
+    <li>
       <%= link_to 'Profile', profile_path(current_user.id), class: 'nav-link' %>
     </li>
   <% end %>
-  <li class="nav-item">
+  <li>
     <%= link_to 'Account', edit_user_registration_path, class: 'nav-link' %>
   </li>
-  <li class="nav-item">
+  <li>
     <%= link_to 'New Meeting', new_meeting_path, class: 'nav-link' %>
   </li>
-  <li class="nav-item">
+  <li>
     <%= link_to 'Chatrooms', conversations_path, class: 'nav-link' %>
   </li>
 </ul>

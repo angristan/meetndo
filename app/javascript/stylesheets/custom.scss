@@ -57,7 +57,10 @@ h1, h2, h3 {
 .card-image {
     max-height: 250px;
     max-width: 250px;
-    display: inherit;
+    min-height: 250px;
+    min-width: 250px;
+    align-items: center;
+    display: flex;
 }
 
 .card-infos {
