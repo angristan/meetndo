@@ -2,7 +2,7 @@
 
 <h1><%= @meeting.name %></h1>
 
-<h2><%= @meeting.category_id %></h2>
+<h2><%= @meeting.category.name %></h2>
 <p>On <%= @meeting.event_date.strftime('%a %F') %> at <%= @meeting.event_date.strftime('%I %M %p') %></p>
 <p><%= @meeting.location %></p>
 
