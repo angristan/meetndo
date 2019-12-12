@@ -20,11 +20,11 @@ class User < ApplicationRecord
   end
 
   def upcoming_meetings
-    meetings.where('date > ?', Time.now)
+    meetings.where('event_date > ?', Time.now)
   end
 
   def past_meetings
-    meetings.where('date < ?', Time.now)
+    meetings.where('event_date < ?', Time.now)
   end
 
   def add_to_favorites(meeting)
