@@ -12,12 +12,23 @@ h1, h2, h3 {
 }
 
 .navbar-fixed {
-    position: sticky;
+    position: fixed;
+    width: -webkit-fill-available;
     top: 0;
     z-index: 1071;
 }
 
+.container-fluid {
+    margin-top: 84.75px;
+}
+
 // --- Horizontal mode: screen width >700px --- //
+@media screen and (max-width: 1440px) {
+    .container-fluid {
+        min-width: 1440px;
+    }
+}
+
 .sidebar-fixed {
     position: sticky;
     top: 10rem;
@@ -99,6 +110,7 @@ h1, h2, h3 {
 // --- Vertical mode: screen width <700px --- //
 @media screen and (max-width: 700px) {
     .container-fluid {
+        min-width: unset;
         margin-left: unset;
         margin-right: unset;
         display: block;
