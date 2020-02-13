@@ -1,5 +1,5 @@
 production:
-  api_key: xisTxcimZ7kZf5gKcmHg
+  api_key: <%= Rails.application.credentials.dig(:rorvswild_api_key) %>
     # ignore_requests: # Do not monitor the following actions
     #   - SecretController#index
     # ignore_jobs: # Do not monitor the following jobs
