@@ -1,0 +1,21 @@
+production:
+  api_key: xisTxcimZ7kZf5gKcmHg
+    # ignore_requests: # Do not monitor the following actions
+    #   - SecretController#index
+    # ignore_jobs: # Do not monitor the following jobs
+    #   - SecretJob
+    # ignore_exceptions: # Do not record the following exceptions
+    #   - ActionController::RoutingError  # By default to ignore 404
+    # ignore_plugins:
+    #   - ActionController
+    #   - ActionMailer
+    #   - ActionView
+    #   - ActiveJob
+    #   - ActiveRecord
+    #   - DelayedJob
+    #   - Elasticsearch
+    #   - Mongo
+    #   - NetHttp
+    #   - Redis
+    #   - Resque
+    #   - Sidekiq

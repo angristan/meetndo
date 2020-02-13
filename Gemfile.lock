@@ -208,6 +208,7 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rorvswild (1.4.7)
     rubocop (0.76.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -311,6 +312,7 @@ DEPENDENCIES
   rails (~> 6.0.1)
   rails-controller-testing (= 1.0.4)
   redcarpet
+  rorvswild
   rubocop-airbnb (>= 3.0.1)
   sass-rails (>= 6)
   selenium-webdriver
